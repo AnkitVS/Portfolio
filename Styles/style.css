@@ -4,54 +4,44 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
-.navbar {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
-    width: fit-content;
-    z-index: 1000;
-    transition: background-color 0.3s; /* add transition effect on navbar hover */
+nav {
+    min-height: 100%; /* make body element at least full height */
+    flex-direction: column; /* stack elements vertically */
+    background-color: #333; /* dark gray background */
+    padding: 10px; /* add some padding to the navbar */
+    display: flex; /* display as flexbox */
+    justify-content: space-between; /* justify content to the left and right */
+    align-items: center; /* vertically center the content */
 }
 
-.navbar:hover {
-    background-color: #444; /* change background color on navbar hover */
-    right: 50%;
+nav ul {
+    list-style: none; /* remove bullet points */
+    margin: 0; /* remove margin */
+    padding: 0; /* remove padding */
+    display: flex; /* display as flexbox */
 }
 
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+nav li {
+    margin-right: 20px; /* add some space between menu items */
 }
 
-.navbar a.nav-link {
-    margin-right: 20px;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s; /* add transition effect on link hover */
+nav a {
+    color: #fff; /* white text color */
+    text-decoration: none; /* remove underline */
+    transition: color 0.2s ease; /* add transition effect */
 }
 
-.navbar a.nav-link:hover {
-    color: #ccc; /* change link color on hover */
+nav a:hover {
+    color: #ccc; /* light gray on hover */
 }
 
-.navbar a.nav-link:hover:nth-child(1) {
-    color: #66d9ef; /* change link color on hover for "Home" */
+nav .nav-link {
+    font-size: 18px; /* increase font size */
+    font-weight: bold; /* make font bold */
 }
 
-.navbar a.nav-link:hover:nth-child(2) {
-    color: #8bc34a; /* change link color on hover for "About" */
-}
-
-.navbar a.nav-link:hover:nth-child(3) {
-    color: #e91e63; /* change link color on hover for "Contact" */
+nav .nav-link.active {
+    color: #337ab7; /* blue text color for active link */
 }
 .resume {
     background-color: #fff;
@@ -205,4 +195,26 @@ h2 {
     .resume {
         max-width: 200px;
     }
+}
+
+footer {
+    background-color: #f7f7f7; /* light gray background */
+    padding: 20px; /* add some padding to the footer */
+    text-align: center; /* center the text */
+    color: #666; /* dark gray text color */
+    clear: both; /* clear any floats */
+    border-top: 1px solid #ddd; /* add a top border */
+}
+
+footer p {
+    margin-bottom: 10px; /* add some margin to the paragraph */
+}
+
+footer a {
+    color: #337ab7; /* blue text color for links */
+    text-decoration: none; /* remove underline */
+}
+
+footer a:hover {
+    color: #23527c; /* darker blue on hover */
 }

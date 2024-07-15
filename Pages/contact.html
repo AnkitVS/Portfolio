@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/Styles/contact-style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="resume.html" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="contact">
+        <h1>Contact Us</h1>
+        <form id="contact-form">
+            <input type="text" id="subject" name="subject" required placeholder="Subject">
+            <input type="email" id="email" name="email" required placeholder="Email">
+            <textarea id="message" name="message" required placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 Ankit Ved</p>
+</footer>
+<script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const subject = document.getElementById('subject').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const mailtoLink = `mailto:${email}?subject=${subject}&body=${message}`;
+        window.location.href = mailtoLink;
+    });
+</script>
+</body>
+</html>
