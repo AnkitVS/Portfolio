@@ -1,16 +1,14 @@
 body {
     background-color: #f0f0f0; /* light gray background */
-    font-family: 'Comic Sans MS', cursive; /* goofy font */
+    font-family: Arial, sans-serif;
     display: flex; /* use flexbox to center the text */
     flex-direction: column;
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
     height: 100vh; /* set the height to the full viewport */
     margin: 0; /* remove default margin */
     text-align: center;
 }
 
-header nav {
+nav {
     min-height: 100%; /* make body element at least full height */
     flex-direction: column; /* stack elements vertically */
     background-color: #333; /* dark gray background */
@@ -20,37 +18,38 @@ header nav {
     align-items: center; /* vertically center the content */
 }
 
-header nav ul {
+nav ul {
     list-style: none; /* remove bullet points */
     margin: 0; /* remove margin */
     padding: 0; /* remove padding */
     display: flex; /* display as flexbox */
 }
 
-header nav li {
+nav li {
     margin-right: 20px; /* add some space between menu items */
 }
 
-header nav a {
+nav a {
     color: #fff; /* white text color */
     text-decoration: none; /* remove underline */
     transition: color 0.2s ease; /* add transition effect */
 }
 
-header nav a:hover {
+nav a:hover {
     color: #ccc; /* light gray on hover */
 }
 
-header nav.nav-link {
+nav .nav-link {
     font-size: 18px; /* increase font size */
     font-weight: bold; /* make font bold */
 }
 
-header nav.nav-link.active {
+nav .nav-link.active {
     color: #337ab7; /* blue text color for active link */
 }
 
 h1 {
+    font-family: 'Comic Sans MS', cursive;
     color: #00698f; /* blue font color */
     font-size: 48px;
     transition: text-shadow 0.2s; /* add transition effect */
