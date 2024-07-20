@@ -53,7 +53,7 @@ nav .nav-link.active {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out 0.5s;
 }
 
 .resume:hover {
