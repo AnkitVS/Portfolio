@@ -1,0 +1,27 @@
+.contact-info {
+    /* Add some basic styling to the card */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Add a transition effect */
+}
+
+.contact-info:hover {
+    /* Add a hover effect to the card */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+}
+
+.contact-content {
+    /* Add some basic styling to the card content */
+    padding: 20px;
+}
+
+.contact-content h2 {
+    /* Add some basic styling to the card title */
+    margin-top: 0;
+}

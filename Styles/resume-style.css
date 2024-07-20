@@ -1,7 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
 nav {
@@ -44,33 +47,43 @@ nav .nav-link.active {
     color: #337ab7; /* blue text color for active link */
 }
 .resume {
-    background-color: #fff;
-    padding: 0.5in;
-    margin: 40px auto;
-    max-width: 50%;
-    width: 100%;
+    margin: 50px auto;
+    max-width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
 }
 
 .resume:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+.left{
+    align-self: flex-start;
+}
 
+.right{
+    align-self: flex-end;
+}
 .contact-info, .summary, .education, .skills, .experience, .projects {
-    width: 100%;
-    margin-bottom: 10px;
+    /* Add some basic styling to the card */
     background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Add a transition effect */
 }
 
-.contact-info:last-child, .summary:last-child, .education:last-child, .skills:last-child, .experience:last-child, .projects:last-child {
-    border-bottom: none;
+.contact-info:hover,.summary:hover, .education:hover, .skills:hover, .experience:hover, .projects:hover {
+    /* Add a hover effect to the card */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px); /* Move the card up slightly on hover */
 }
+
 
 h2 {
     margin-top: 0;
