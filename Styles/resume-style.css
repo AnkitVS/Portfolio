@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -7,6 +7,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
+
 nav {
     min-height: 100%; /* make body element at least full height */
     flex-direction: column; /* stack elements vertically */
@@ -46,6 +47,7 @@ nav .nav-link {
 nav .nav-link.active {
     color: #337ab7; /* blue text color for active link */
 }
+
 .resume {
     margin: 50px auto;
     max-width: 70%;
@@ -59,13 +61,19 @@ nav .nav-link.active {
 .resume:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.left{
+
+.left {
     align-self: flex-start;
 }
 
-.right{
+.right {
     align-self: flex-end;
 }
+
+p {
+    line-height: 1.7;
+}
+
 .contact-info, .summary, .education, .skills, .experience, .projects {
     /* Add some basic styling to the card */
     background-color: #fff;
@@ -78,25 +86,19 @@ nav .nav-link.active {
     transition: all 0.3s ease-in-out; /* Add a transition effect */
 }
 
-.contact-info:hover,.summary:hover, .education:hover, .skills:hover, .experience:hover, .projects:hover {
+.contact-info:hover, .summary:hover, .education:hover, .skills:hover, .experience:hover, .projects:hover {
     /* Add a hover effect to the card */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     transform: translateY(-5px); /* Move the card up slightly on hover */
-}
-
-
-h2 {
-    margin-top: 0;
 }
 
 .contact-info {
     text-align: center;
 }
 
-.contact-info p {
-    margin-bottom: 10px;
+.fab{
+    font-size: 25px;
 }
-
 .contact-info a {
     text-decoration: none;
     color: #337ab7; /* or any other color you prefer */
@@ -105,6 +107,7 @@ h2 {
 .contact-info a:hover {
     color: #23527c; /* or any other color you prefer */
 }
+
 .experience-item {
     margin-bottom: 20px;
 }
@@ -146,16 +149,11 @@ h2 {
     margin-top: 0;
 }
 
-.projects-list {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.projects-list li {
-    margin-bottom: 10px;
-    margin-right: 20px;
+.projects-details span {
+    display: list-item;
+    list-style: disc;
+    left: 20px;
+    position: relative
 }
 
 .education {
@@ -167,12 +165,10 @@ h2 {
 
 .education h2 {
     grid-column: 1 / -1;
-    margin-top: 0;
 }
 
 .education p:nth-child(2) {
     grid-column: 1;
-    white-space: nowrap;
 }
 
 .education p:nth-child(3) {
