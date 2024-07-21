@@ -1,22 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under work</title>
-    <link rel="stylesheet" href="/Styles/const-style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anve's Landing Page</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
+
+        body {
+            background-color: #000; /* black background */
+            font-family: Arial, sans-serif;
+            color: #fff; /* white text */
+        }
+        .container {
+            max-width: 800px;
+            margin: 10% auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .intro {
+            flex-basis: 60%;
+        }
+        .portrait {
+            flex-basis: 30%;
+            text-align: center;
+        }
+
+        .portrait img {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: moveUpDown 2s infinite;
+        }
+
+        @keyframes moveUpDown {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .wave {
+            animation: wave 1s infinite ease-out;
+            transform-origin: 60% 70%;
+            display: inline-block;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: rotate(-20deg);
+            }
+            15% {
+                transform: rotate(-10deg);
+            }
+            30% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+            65% {
+                transform: rotate(20deg);
+            }
+            80% {
+                transform: rotate(10deg);
+            }
+            95% {
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(-10deg);
+            }
+
+        }
+
+        .typewriter {
+            width: 26ch;
+            animation: typing 4s steps(22),
+            backspace 4s steps(26) infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+            font-size: 2em;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes backspace {
+            0%,
+            100% {
+                width: 26ch;
+            }
+            50% {
+                width: 0;
+            }
+        }
+
+        .name {
+            transition: text-shadow 0.2s;
+            font-family: "Permanent Marker", cursive;
+            font-weight: 800;
+            font-style: normal;
+            font-size: 40px;
+        }
+
+        .name:hover {
+            text-shadow: 0 0 20px #7cfc00;
+        }
+
+        .about {
+            font-family: "Playwrite HR";
+            font-optical-sizing: auto;
+            font-size: 25px;
+            font-weight: bolder;
+            font-style: normal;
+        }
+        nav {
+            min-height: 100%; /* make body element at least full height */
+            flex-direction: column; /* stack elements vertically */
+            background-color: #333; /* dark gray background */
+            padding: 10px; /* add some padding to the navbar */
+            display: flex; /* display as flexbox */
+            justify-content: space-between; /* justify content to the left and right */
+            align-items: center; /* vertically center the content */
+        }
+
+        nav ul {
+            list-style: none; /* remove bullet points */
+            margin: 0; /* remove margin */
+            padding: 0; /* remove padding */
+            display: flex; /* display as flexbox */
+        }
+
+        nav li {
+            margin-right: 20px; /* add some space between menu items */
+        }
+
+        nav a {
+            color: #fff; /* white text color */
+            text-decoration: none; /* remove underline */
+            transition: color 0.2s ease; /* add transition effect */
+        }
+
+        nav a:hover {
+            color: #ccc; /* light gray on hover */
+        }
+
+        nav .nav-link {
+            font-size: 18px; /* increase font size */
+            font-weight: bold; /* make font bold */
+        }
+
+        nav .nav-link.active {
+            color: #337ab7; /* blue text color for active link */
+        }
+
+        footer {
+            background-color: #f7f7f7; /* light gray background */
+            padding: 20px; /* add some padding to the footer */
+            text-align: center; /* center the text */
+            color: #666; /* dark gray text color */
+            margin-bottom: 0;
+            border-top: 1px solid #ddd; /* add a top border */
+        }
+
+        footer p {
+            margin-bottom: 10px; /* add some margin to the paragraph */
+        }
+
+        footer a {
+            color: #337ab7; /* blue text color for links */
+            text-decoration: none; /* remove underline */
+        }
+
+        footer a:hover {
+            color: #23527c; /* darker blue on hover */
+        }
+    </style>
 </head>
 <body>
 <header>
     <nav>
         <ul>
-            <li><a href="#" class="nav-link">Home</a></li>
-            <li><a href="/Pages/resume.html" class="nav-link">Resume</a></li>
-            <li><a href="/Pages/contact.html" class="nav-link">Contact</a></li>
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">Resume</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 </header>
-<h1>Still under works....appreciate your patience</h1>
+<main>
+    <div class="container">
+        <div class="intro">
+            <h1>
+                Hi<span class="wave">👋</span><br />
+                I'm <span class="name" style="color: #7cfc00">Ankit Ved</span>
+            </h1>
+            <p class="typewriter" style="color: #eedc82">
+                Quality Assurance Engineer
+            </p>
+            <p class="about">
+                Experienced Software Engineer specializing in Testing for insurance
+                projects, with over 3 years of hands-on experience. Skilled in
+                collaborating within diverse deployment teams and currently
+                excelling in L3 QA, ensuring the highest standards of quality
+                assurance.
+            </p>
+        </div>
+        <div class="portrait">
+            <img src="your_self_portrait_image.jpg" alt="Anve's Self Portrait" />
+        </div>
+    </div>
+</main>
 <footer>
     <p>&copy; 2023 Ankit Ved</p>
 </footer>
