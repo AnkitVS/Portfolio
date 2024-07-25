@@ -1,7 +1,7 @@
 particlesJS("particles-js", {
     particles: {
         number: {value: 80, density: {enable: true, value_area: 800}},
-        max_particles: { value: 100 },
+        max_particles: {value: 100},
         color: {value: "#ffffff"},
         shape: {
             type: "triangle",
@@ -54,7 +54,7 @@ particlesJS("particles-js", {
     },
     retina_detect: true
 });
-var count_particles, stats, update;
+let count_particles, stats, update;
 stats = new Stats();
 stats.setMode(0);
 stats.domElement.style.position = "absolute";

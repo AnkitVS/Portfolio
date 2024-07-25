@@ -7,7 +7,7 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
-
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         body {
             background-color: #000; /* black background */
             font-family: Arial, sans-serif;
@@ -130,6 +130,7 @@
             font-weight: 800;
             font-style: normal;
             font-size: 40px;
+            z-index: 1;
         }
 
         .name:hover {
@@ -166,19 +167,18 @@
         }
 
         nav {
-            min-height: 100%;
-            flex-direction: column;
-            padding: 10px;
             display: flex;
+            flex-direction: row;
+            padding: 10px;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
         }
 
         nav ul {
-            list-style: none; /* remove bullet points */
-            margin: 0; /* remove margin */
-            padding: 0; /* remove padding */
-            display: flex; /* display as flexbox */
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
         }
 
         nav li {
@@ -198,6 +198,15 @@
         nav .nav-link {
             font-size: 18px; /* increase font size */
             font-weight: bold; /* make font bold */
+        }
+
+        .logo p {
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-size: 25px;
+            font-style: normal;
+            margin: 0;
+            color: #ffffff;
         }
 
         footer { /* light gray background */
@@ -224,6 +233,7 @@
             <li><a href="Pages/resume.html" class="nav-link">Resume</a></li>
             <li><a href="Pages/contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <div class="logo" style="font-family: 'Pacifico', cursive"><p>AnVe</p></div>
     </nav>
 </header>
 <div id="particles-js"></div>
