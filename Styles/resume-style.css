@@ -8,20 +8,27 @@ body {
     background-color: #000000;
 }
 
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 nav {
-    min-height: 100%;
-    flex-direction: column;
-    padding: 10px;
     display: flex;
+    flex-direction: row;
+    padding: 10px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 nav ul {
-    list-style: none; /* remove bullet points */
-    margin: 0; /* remove margin */
-    padding: 0; /* remove padding */
-    display: flex; /* display as flexbox */
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
 }
 
 nav li {
@@ -43,22 +50,29 @@ nav .nav-link {
     font-weight: bold; /* make font bold */
 }
 
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.logo p {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-size: 25px;
+    font-style: normal;
+    margin: 0;
+    color: #ffffff;
+}
+header{
+    position: relative;
+    z-index: 1;
 }
 
 .resume {
     margin: 50px auto;
-    max-width: 70%;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     transition: box-shadow 0.3s ease-in-out 0.5s;
+    position: relative;
+    z-index: 1;
 }
 
 .resume:hover {
@@ -212,15 +226,16 @@ p {
 }
 
 
-footer { /* light gray background */
-    padding: 20px; /* add some padding to the footer */
-    text-align: center; /* center the text */
-    color: #666; /* dark gray text color */
-    margin-bottom: 0; /* add a top border */
+footer {
+    height: 10px;
+    max-width: fit-content;
+    position: relative;
+    bottom: 0;
+    left: 40%;
+    color: #666;
 }
 
 footer p {
-    margin-bottom: 5px;
     font-size: 20px;
     font-weight: bold;
 }
