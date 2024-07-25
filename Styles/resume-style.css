@@ -75,10 +75,12 @@ header{
     z-index: 1;
 }
 
+
 .resume:hover {
     box-shadow: 0 0 20px rgba(4, 59, 92);
     border-radius: 10px;
 }
+
 
 .left {
     align-self: flex-start;
@@ -98,7 +100,7 @@ p {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    width: 60%;
+    width: 80%;
     margin: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out; /* Add a transition effect */
@@ -112,6 +114,7 @@ p {
 
 .contact-info {
     text-align: center;
+    width: fit-content;
 }
 
 .fab{
@@ -203,25 +206,25 @@ p {
 /* Make the resume responsive */
 @media (max-width: 1200px) {
     .resume {
-        max-width: 600px;
+        max-width: 1100px;
     }
 }
 
 @media (max-width: 800px) {
     .resume {
-        max-width: 400px;
+        max-width: 700px;
     }
 }
 
 @media (max-width: 600px) {
     .resume {
-        max-width: 300px;
+        max-width: 500px;
     }
 }
 
 @media (max-width: 400px) {
     .resume {
-        max-width: 200px;
+        max-width: 300px;
     }
 }
 
