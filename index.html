@@ -1,347 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anve's Landing Page</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-        body {
-            background-color: #000; /* black background */
-            font-family: Arial, sans-serif;
-            color: #fff; /* white text */
+      @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+      body {
+        background-color: #000; /* black background */
+        font-family: Arial, sans-serif;
+        color: #fff; /* white text */
+      }
+
+      header {
+        position: relative;
+        z-index: 2;
+        left: 10%;
+        top: 0;
+        width: 80%;
+        border-radius: 50px;
+        background-color: #23527c74;
+      }
+      
+      #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 20% 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @media screen {
+      }
+      .intro {
+        flex-basis: 60%;
+      }
+
+      .portrait {
+        flex-basis: 30%;
+        text-align: center;
+      }
+
+      .portrait img {
+        width: 100%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        animation: moveUpDown 2s infinite;
+      }
+
+      @keyframes moveUpDown {
+        0% {
+          transform: translateY(0px);
         }
 
-        header{
-            position: relative;
-            z-index: 1;
-        }
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        50% {
+          transform: translateY(-10px);
         }
 
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .wave {
+        animation: wave 1s infinite ease-out;
+        transform-origin: 60% 70%;
+        display: inline-block;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: rotate(-20deg);
+        }
+        15% {
+          transform: rotate(-10deg);
+        }
+        30% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        65% {
+          transform: rotate(20deg);
+        }
+        80% {
+          transform: rotate(10deg);
+        }
+        95% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-10deg);
+        }
+      }
+
+      .typewriter {
+        width: 26ch;
+        animation: typing 4s steps(22),
+          backspace 4s steps(26) infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-family: monospace;
+        font-size: 1.7em;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+      }
+
+      @keyframes backspace {
+        0%,
+        100% {
+          width: 26ch;
+        }
+        50% {
+          width: 0;
+        }
+      }
+
+      .name {
+        position: relative;
+        transition: text-shadow 0.2s;
+        font-family: "Permanent Marker", cursive;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 40px;
+        z-index: 1;
+      }
+
+      .name:hover {
+        text-shadow: 0 0 20px #7cfc00;
+      }
+
+      .about {
+        font-family: "Playwrite HR";
+        font-optical-sizing: auto;
+        font-size: 25px;
+        font-weight: bolder;
+        font-style: normal;
+      }
+
+      @media only screen and (max-width: 768px) {
         .container {
-            max-width: 800px;
-            margin:0 20% 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          flex-direction: column;
+          align-items: center;
+          margin: 0;
         }
 
-        @media screen {
-
-        }
         .intro {
-            flex-basis: 60%;
+          flex-basis: 100%;
         }
 
         .portrait {
-            flex-basis: 30%;
-            text-align: center;
+          order: -1;
+          flex-basis: 100%;
+          margin-top: 20px;
         }
 
         .portrait img {
-            width: 100%;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            animation: moveUpDown 2s infinite;
+          width: 50%; /* reduce image size on mobile */
         }
+      }
 
-        @keyframes moveUpDown {
-            0% {
-                transform: translateY(0px);
-            }
+      nav {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
 
-            50% {
-                transform: translateY(-10px);
-            }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 10px;
+        display: flex;
+      }
 
-            100% {
-                transform: translateY(0px);
-            }
-        }
+      nav li {
+        margin-right: 20px; /* add some space between menu items */
+      }
 
-        .wave {
-            animation: wave 1s infinite ease-out;
-            transform-origin: 60% 70%;
-            display: inline-block;
-        }
+      nav a {
+        color: #fff; /* white text color */
+        text-decoration: none; /* remove underline */
+        transition: color 0.2s ease; /* add transition effect */
+      }
 
-        @keyframes wave {
-            0% {
-                transform: rotate(-20deg);
-            }
-            15% {
-                transform: rotate(-10deg);
-            }
-            30% {
-                transform: rotate(0deg);
-            }
-            50% {
-                transform: rotate(10deg);
-            }
-            65% {
-                transform: rotate(20deg);
-            }
-            80% {
-                transform: rotate(10deg);
-            }
-            95% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(-10deg);
-            }
-        }
+      nav a:hover {
+        color: #ccc; /* light gray on hover */
+      }
 
-        .typewriter {
-            width: 26ch;
-            animation: typing 4s steps(22),
-            backspace 4s steps(26) infinite alternate;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid;
-            font-family: monospace;
-            font-size: 1.7em;
-        }
+      nav .nav-link {
+        font-size: 18px; /* increase font size */
+        font-weight: bold; /* make font bold */
+      }
 
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-        }
+      .logo p {
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-size: 25px;
+        font-style: normal;
+        margin: 0;
+        color: #ffffff;
+      }
 
-        @keyframes backspace {
-            0%,
-            100% {
-                width: 26ch;
-            }
-            50% {
-                width: 0;
-            }
-        }
+      footer {
+        position: relative;
+        padding: 20px; 
+        text-align: center; 
+        color: #666;
+        bottom: 0;
+      }
 
-        .name {
-            transition: text-shadow 0.2s;
-            font-family: "Permanent Marker", cursive;
-            font-weight: 800;
-            font-style: normal;
-            font-size: 40px;
-            z-index: 1;
-        }
-
-        .name:hover {
-            text-shadow: 0 0 20px #7cfc00;
-        }
-
-        .about {
-            font-family: "Playwrite HR";
-            font-optical-sizing: auto;
-            font-size: 25px;
-            font-weight: bolder;
-            font-style: normal;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-                margin: 0;
-            }
-
-            .intro {
-                flex-basis: 100%;
-            }
-
-            .portrait {
-                order: -1;
-                flex-basis: 100%;
-                margin-top: 20px;
-            }
-
-            .portrait img {
-                width: 50%; /* reduce image size on mobile */
-            }
-        }
-
-        nav {
-            display: flex;
-            flex-direction: row;
-            padding: 10px;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 10px;
-            display: flex;
-        }
-
-        nav li {
-            margin-right: 20px; /* add some space between menu items */
-        }
-
-        nav a {
-            color: #fff; /* white text color */
-            text-decoration: none; /* remove underline */
-            transition: color 0.2s ease; /* add transition effect */
-        }
-
-        nav a:hover {
-            color: #ccc; /* light gray on hover */
-        }
-
-        nav .nav-link {
-            font-size: 18px; /* increase font size */
-            font-weight: bold; /* make font bold */
-        }
-
-        .logo p {
-            font-family: "Pacifico", cursive;
-            font-weight: 400;
-            font-size: 25px;
-            font-style: normal;
-            margin: 0;
-            color: #ffffff;
-        }
-
-        footer { /* light gray background */
-            padding: 20px; /* add some padding to the footer */
-            text-align: center; /* center the text */
-            color: #666; /* dark gray text color */
-            margin-bottom: 0; /* add a top border */
-        }
-
-        footer p {
-            margin-bottom: 5px;
-            font-size: 20px;
-            font-weight: bold;
-        }
+      footer p {
+        margin-bottom: 5px;
+        font-size: 20px;
+        font-weight: bold;
+      }
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/dist/particles.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/dist/particles.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-</head>
-<body>
-<header>
-    <nav>
+  </head>
+  <body>
+    <header>
+      <nav>
         <ul>
-            <li><a href="#" class="nav-link">Home</a></li>
-            <li><a href="Pages/resume.html" class="nav-link">Resume</a></li>
-            <li><a href="Pages/contact.html" class="nav-link">Contact</a></li>
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="Pages/resume.html" class="nav-link">Resume</a></li>
+          <li><a href="Pages/contact.html" class="nav-link">Contact</a></li>
         </ul>
-        <div class="logo" style="font-family: 'Pacifico', cursive"><p>AnVe</p></div>
-    </nav>
-</header>
-<div id="particles-js"></div>
-<main>
-    <div class="container">
+        <div class="logo" style="font-family: 'Pacifico', cursive">
+          <p>AnVe</p>
+        </div>
+      </nav>
+    </header>
+    <div id="particles-js"></div>
+    <main>
+      <div class="container">
         <div class="intro">
-            <h1>
-                Hi<span class="wave">👋</span><br/>
-                I'm <span class="name" style="color: #7cfc00">Ankit Ved</span>
-            </h1>
-            <p class="typewriter" style="color: #eedc82">
-                Quality Assurance Engineer
-            </p>
-            <p class="about">
-                Experienced Software Engineer specializing in Testing for insurance
-                projects, with over 3 years of hands-on experience. Skilled in
-                collaborating within diverse deployment teams and currently
-                excelling in L3 QA, ensuring the highest standards of quality
-                assurance.
-            </p>
+          <h1>
+            Hi<span class="wave">👋</span><br />
+            I'm <span class="name" style="color: #7cfc00">Ankit Ved</span>
+          </h1>
+          <p class="typewriter" style="color: #eedc82">
+            Quality Assurance Engineer
+          </p>
+          <p class="about">
+            Experienced Software Engineer specializing in Testing for insurance
+            projects, with over 3 years of hands-on experience. Skilled in
+            collaborating within diverse deployment teams and currently
+            excelling in L3 QA, ensuring the highest standards of quality
+            assurance.
+          </p>
         </div>
         <div class="portrait">
-            <img src="your_self_portrait_image.jpg" alt="Anve's Self Portrait"/>
+          <img src="your_self_portrait_image.jpg" alt="Anve's Self Portrait" />
         </div>
-    </div>
-</main>
-<footer>
-    <p>&copy; 2023 Ankit Ved</p>
-</footer>
-<script>
-    particlesJS("particles-js", {
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Ankit Ved</p>
+    </footer>
+    <script>
+      particlesJS("particles-js", {
         particles: {
-            number: {value: 80, density: {enable: true, value_area: 800}},
-            max_particles: { value: 100 },
-            color: {value: "#ffffff"},
-            shape: {
-                type: "triangle",
-                stroke: {width: 0, color: "#000000"},
-                polygon: {nb_sides: 5},
-                image: {src: "img/github.svg", width: 100, height: 100}
-            },
-            opacity: {
-                value: 0.5,
-                random: false,
-                anim: {enable: false, speed: 1, opacity_min: 0.1, sync: false}
-            },
-            size: {
-                value: 3.9385584875935393,
-                random: true,
-                anim: {enable: false, speed: 40, size_min: 0.1, sync: false}
-            },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: "#ffffff",
-                opacity: 0.4,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 4,
-                direction: "none",
-                random: true,
-                straight: false,
-                out_mode: "bounce",
-                bounce: false,
-                attract: {enable: false, rotateX: 600, rotateY: 1200}
-            }
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          max_particles: { value: 100 },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "triangle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+            image: { src: "img/github.svg", width: 100, height: 100 },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 3.9385584875935393,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 4,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "bounce",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          },
         },
         interactivity: {
-            detect_on: "canvas",
-            events: {
-                onhover: {enable: false, mode: "repulse"},
-                onclick: {enable: true, mode: "push"},
-                resize: true
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: false, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
             },
-            modes: {
-                grab: {distance: 400, line_linked: {opacity: 1}},
-                bubble: {distance: 400, size: 40, duration: 2, opacity: 8, speed: 3},
-                repulse: {distance: 0, duration: 0.4},
-                push: {particles_nb: 4},
-                remove: {particles_nb: 2}
-            }
+            repulse: { distance: 0, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+          },
         },
-        retina_detect: true
-    });
-    let count_particles, stats, update;
-    stats = new Stats();
-    stats.setMode(0);
-    stats.domElement.style.position = "absolute";
-    stats.domElement.style.left = "0px";
-    stats.domElement.style.top = "0px";
-    document.body.appendChild(stats.domElement);
-    count_particles = document.querySelector(".js-count-particles");
-    update = function () {
+        retina_detect: true,
+      });
+      let count_particles, stats, update;
+      stats = new Stats();
+      stats.setMode(0);
+      stats.domElement.style.position = "absolute";
+      stats.domElement.style.left = "0px";
+      stats.domElement.style.top = "0px";
+      document.body.appendChild(stats.domElement);
+      count_particles = document.querySelector(".js-count-particles");
+      update = function () {
         stats.begin();
         stats.end();
-        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        if (
+          window.pJSDom[0].pJS.particles &&
+          window.pJSDom[0].pJS.particles.array
+        ) {
+          count_particles.innerText =
+            window.pJSDom[0].pJS.particles.array.length;
         }
         requestAnimationFrame(update);
-    };
-    requestAnimationFrame(update);
-
-</script>
-</body>
+      };
+      requestAnimationFrame(update);
+    </script>
+  </body>
 </html>

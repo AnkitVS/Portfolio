@@ -16,6 +16,7 @@ body {
     height: 100%;
 }
 
+
 nav {
     display: flex;
     flex-direction: row;
@@ -59,8 +60,13 @@ nav .nav-link {
     color: #ffffff;
 }
 header{
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    z-index: 2;
+    left: 10%;
+    top: 0;
+    width: 80%;
+    border-radius: 50px;
+    background-color: #23527c74;
 }
 
 .resume {
