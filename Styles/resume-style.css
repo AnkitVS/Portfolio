@@ -1,250 +1,288 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
 }
 
 #particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-
 nav {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-    display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
 }
 
 nav li {
-    margin-right: 20px; /* add some space between menu items */
+  margin-right: 20px; /* add some space between menu items */
 }
 
 nav a {
-    color: #fff; /* white text color */
-    text-decoration: none; /* remove underline */
-    transition: color 0.2s ease; /* add transition effect */
+  color: #fff; /* white text color */
+  text-decoration: none; /* remove underline */
+  transition: color 0.2s ease; /* add transition effect */
 }
 
 nav a:hover {
-    color: #ccc; /* light gray on hover */
+  color: #ccc; /* light gray on hover */
 }
 
 nav .nav-link {
-    font-size: 18px; /* increase font size */
-    font-weight: bold; /* make font bold */
+  font-size: 18px; /* increase font size */
+  font-weight: bold; /* make font bold */
 }
 
 .logo p {
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-size: 25px;
-    font-style: normal;
-    margin: 0;
-    color: #ffffff;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-size: 25px;
+  font-style: normal;
+  margin: 0;
+  color: #ffffff;
 }
-header{
-    position: fixed;
-    z-index: 2;
-    left: 10%;
-    top: 0;
-    width: 80%;
-    border-radius: 50px;
-    background-color: #23527c74;
+header {
+  position: fixed;
+  z-index: 2;
+  left: 10%;
+  top: 0;
+  width: 80%;
+  border-radius: 50px;
+  background-color: #23527c74;
+}
+
+.card {
+  padding: 10px;
+}
+.card p {
+  text-align: justify;
 }
 
 .resume {
-    margin: 50px auto;
-    max-width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    transition: box-shadow 0.3s ease-in-out 0.5s;
-    position: relative;
-    z-index: 1;
+  margin: 50px auto;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease-in-out 0.5s;
+  position: relative;
+  z-index: 1;
 }
-
 
 .resume:hover {
-    box-shadow: 0 0 20px rgba(4, 59, 92);
-    border-radius: 10px;
+  box-shadow: 0 0 20px rgba(4, 59, 92);
+  border-radius: 10px;
 }
 
-
 .left {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .right {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 p {
-    line-height: 1.7;
+  line-height: 1.7;
 }
 
-.contact-info, .summary, .education, .skills, .experience, .projects {
-    /* Add some basic styling to the card */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    width: 80%;
-    margin: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out; /* Add a transition effect */
+.contact-info,
+.summary,
+.education,
+.skills,
+.experience,
+.projects {
+  /* Add some basic styling to the card */
+  color: #ccc;
+  background-color: rgba(44, 62, 129, 0.3);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out; /* Add a transition effect */
 }
 
-.contact-info:hover, .summary:hover, .education:hover, .skills:hover, .experience:hover, .projects:hover {
-    /* Add a hover effect to the card */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(-5px); /* Move the card up slightly on hover */
+.summary:hover,
+.education:hover,
+.skills:hover,
+.experience:hover,
+.projects:hover {
+  /* Add a hover effect to the card */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px); /* Move the card up slightly on hover */
 }
 
 .contact-info {
-    text-align: center;
-    width: fit-content;
+  text-align: center;
+  width: fit-content;
 }
 
-.fab{
-    font-size: 25px;
-}
-.contact-info a {
-    text-decoration: none;
-    color: #337ab7; /* or any other color you prefer */
+.contact-info:hover .contact-links {
+  translate: 150px 0px;
+  width: fit-content;
+  visibility: visible;
 }
 
-.contact-info a:hover {
-    color: #23527c; /* or any other color you prefer */
+.fab {
+  font-size: 25px;
+}
+
+.fab 
+
+.contact-links a {
+  text-decoration: none;
+  color: #337ab7; /* or any other color you prefer */
+}
+
+.contact-links a:hover {
+  color: #23527c; /* or any other color you prefer */
+}
+
+.contact-links {
+   visibility: hidden; 
+  border: #000000 solid;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
 }
 
 .experience-item {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .skills {
-    display: grid;
-    grid-row: auto;
-    grid-column: auto;
+  display: grid;
+  grid-row: auto;
+  grid-column: auto;
 }
 
-.technical-skills, .soft-skills, .tools {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    margin: 0;
+.technical-skills,
+.soft-skills,
+.tools {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
-.technical-skills h3, .soft-skills h3, .tools h3 {
-    /*margin-right: 10px;*/
-    padding: 0;
-    margin: 5px 10px 5px;
+.technical-skills h3,
+.soft-skills h3,
+.tools h3 {
+  /*margin-right: 10px;*/
+  padding: 0;
+  margin: 5px 10px 5px;
 }
 
-.technical-skills p, .soft-skills p, .tools p {
-    margin: 0;
-    padding: 0;
+.technical-skills p,
+.soft-skills p,
+.tools p {
+  margin: 0;
+  padding: 0;
 }
 
 .experience-details {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.experience-location, .experience-dates {
-    color: #666;
+.experience-location,
+.experience-dates {
+  color: #666;
 }
 
 .projects-title a {
-    text-decoration: none;
-    color: #111111;
+  text-decoration: none;
+  color: #111111;
 }
 
 .projects-details span {
-    display: list-item;
-    list-style: disc;
-    left: 20px;
-    position: relative
+  display: list-item;
+  list-style: disc;
+  left: 20px;
+  position: relative;
 }
 
 .education {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .education h2 {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .education p:nth-child(2) {
-    grid-column: 1;
+  grid-column: 1;
 }
 
 .education p:nth-child(3) {
-    grid-column: 2;
-    text-align: center;
+  grid-column: 2;
+  text-align: center;
 }
 
 .education p:nth-child(4) {
-    grid-column: 1 / -1;
-    text-align: center;
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
 /* Make the resume responsive */
 @media (max-width: 1200px) {
-    .resume {
-        max-width: 1100px;
-    }
+  .resume {
+    max-width: 1100px;
+  }
 }
 
 @media (max-width: 800px) {
-    .resume {
-        max-width: 700px;
-    }
+  .resume {
+    max-width: 700px;
+  }
 }
 
 @media (max-width: 600px) {
-    .resume {
-        max-width: 500px;
-    }
+  .resume {
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 400px) {
-    .resume {
-        max-width: 300px;
-    }
+  .resume {
+    max-width: 300px;
+  }
 }
 
-
 footer {
-    height: 10px;
-    max-width: fit-content;
-    position: relative;
-    bottom: 0;
-    left: 40%;
-    color: #666;
+  height: 10px;
+  max-width: fit-content;
+  position: relative;
+  bottom: 0;
+  left: 40%;
+  color: #666;
 }
 
 footer p {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
