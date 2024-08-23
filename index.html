@@ -3,27 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Anve's Landing Page</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         background-color: #000; /* black background */
         font-family: Arial, sans-serif;
         color: #fff; /* white text */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
-      header {
-        position: relative;
-        z-index: 2;
-        left: 10%;
-        top: 0;
-        width: 80%;
-        border-radius: 50px;
-        background-color: #23527c74;
+      main{
+        flex: 1;
       }
-      
+
       #particles-js {
         position: absolute;
         top: 0;
@@ -32,22 +38,116 @@
         height: 100%;
       }
 
+      header {
+        position: fixed;
+        top: 0;
+        left: 10%;
+        width: 80%;
+        background: linear-gradient(to right, #23527c, #1d2a6a);
+        z-index: 10;
+        border-radius: 50px;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        box-sizing: border-box;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex: 1;
+      }
+
+      nav li {
+        margin-left: 20px; /* add some space between menu items */
+      }
+
+      nav a {
+        color: #fff; /* white text color */
+        text-decoration: none; /* remove underline */
+        transition: color 0.2s ease; /* add transition effect */
+      }
+
+      nav a:hover {
+        color: #ccc; /* Highlight color on hover */
+      }
+
+      .logo {
+        font-family: "Pacifico", cursive;
+        font-size: 25px;
+        color: #ffffff;
+        white-space: nowrap;
+      }
+
+      .menu-toggle {
+        display: none; /* Hidden by default */
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 10px; /* Adjust padding if needed */
+        }
+
+        .logo {
+          font-size: 20px; /* Adjust logo size for smaller screens */
+        }
+
+        nav ul {
+          display: none; /* Hide menu items by default */
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          background-color: #23527c74;
+          position: absolute;
+          top: 60px; /* Adjust based on header height */
+          left: 0;
+          z-index: 10;
+        }
+
+        nav ul.active {
+          display: flex; /* Show menu when active */
+        }
+
+        nav li {
+          margin: 10px 0; /* Vertical spacing for stacked items */
+        }
+
+        nav a {
+          font-size: 16px; /* Adjust font size for smaller screens */
+        }
+
+        .menu-toggle {
+          display: block; /* Show menu toggle button */
+        }
+      }
+
       .container {
-        max-width: 800px;
-        margin: 0 20% 0;
+        max-width: 1200px;
+        margin: 100px auto 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 50px 20px;
       }
 
-      @media screen {
-      }
       .intro {
-        flex-basis: 60%;
+        flex: 2;
       }
 
       .portrait {
-        flex-basis: 30%;
+        flex: 1;
         text-align: center;
       }
 
@@ -137,7 +237,6 @@
         transition: text-shadow 0.2s;
         font-family: "Permanent Marker", cursive;
         font-weight: 800;
-        font-style: normal;
         font-size: 40px;
         z-index: 1;
       }
@@ -148,7 +247,6 @@
 
       .about {
         font-family: "Playwrite HR";
-        font-optical-sizing: auto;
         font-size: 25px;
         font-weight: bolder;
         font-style: normal;
@@ -176,61 +274,22 @@
         }
       }
 
-      nav {
-        display: flex;
-        flex-direction: row;
-        padding: 10px;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 10px;
-        display: flex;
-      }
-
-      nav li {
-        margin-right: 20px; /* add some space between menu items */
-      }
-
-      nav a {
-        color: #fff; /* white text color */
-        text-decoration: none; /* remove underline */
-        transition: color 0.2s ease; /* add transition effect */
-      }
-
-      nav a:hover {
-        color: #ccc; /* light gray on hover */
-      }
-
-      nav .nav-link {
-        font-size: 18px; /* increase font size */
-        font-weight: bold; /* make font bold */
-      }
-
-      .logo p {
-        font-family: "Pacifico", cursive;
-        font-weight: 400;
-        font-size: 25px;
-        font-style: normal;
-        margin: 0;
-        color: #ffffff;
-      }
-
       footer {
-        position: relative;
-        padding: 20px; 
-        text-align: center; 
-        color: #666;
+        background: linear-gradient(to right, #23527c, #1d2a6a);
+        padding: 10px 0;
+        color: #fff;
+        text-align: center;
+        align-content: center;
+        position: absolute;
         bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
       }
 
       footer p {
-        margin-bottom: 5px;
-        font-size: 20px;
-        font-weight: bold;
+        top: 100px;
+        font-size: 1.2em;
       }
     </style>
     <link
@@ -242,10 +301,14 @@
   <body>
     <header>
       <nav>
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+          <!-- Icon for the menu button -->
+        </button>
         <ul>
           <li><a href="#" class="nav-link">Home</a></li>
-          <li><a href="Pages/resume.html" class="nav-link">Resume</a></li>
-          <li><a href="Pages/contact.html" class="nav-link">Contact</a></li>
+          <li><a href="/Pages/resume.html" class="nav-link">Resume</a></li>
+          <li><a href="/Pages/contact.html" class="nav-link">Contact</a></li>
         </ul>
         <div class="logo" style="font-family: 'Pacifico', cursive">
           <p>AnVe</p>
@@ -363,6 +426,13 @@
         requestAnimationFrame(update);
       };
       requestAnimationFrame(update);
+    </script>
+    <script>
+      document
+        .querySelector(".menu-toggle")
+        .addEventListener("click", function () {
+          document.querySelector("nav ul").classList.toggle("active");
+        });
     </script>
   </body>
 </html>

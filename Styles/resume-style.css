@@ -16,23 +16,35 @@ body {
   height: 100%;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  background: linear-gradient(to right, #23527c, #1d2a6a);
+  z-index: 10;
+  border-radius: 50px;
+}
+
 nav {
   display: flex;
   flex-direction: row;
   padding: 10px;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  width: 90%;
+  box-sizing: border-box;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 10px;
   display: flex;
+  flex: 1;
 }
 
 nav li {
-  margin-right: 20px; /* add some space between menu items */
+  margin-left: 20px; /* add some space between menu items */
 }
 
 nav a {
@@ -42,30 +54,61 @@ nav a {
 }
 
 nav a:hover {
-  color: #ccc; /* light gray on hover */
+  color: #ccc; /* Highlight color on hover */
 }
 
-nav .nav-link {
-  font-size: 18px; /* increase font size */
-  font-weight: bold; /* make font bold */
-}
-
-.logo p {
+.logo {
   font-family: "Pacifico", cursive;
-  font-weight: 400;
   font-size: 25px;
-  font-style: normal;
-  margin: 0;
   color: #ffffff;
+  white-space: nowrap;
 }
-header {
-  position: fixed;
-  z-index: 2;
-  left: 10%;
-  top: 0;
-  width: 80%;
-  border-radius: 50px;
-  background-color: #23527c74;
+
+.menu-toggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 10px; /* Adjust padding if needed */
+  }
+
+  .logo {
+    font-size: 20px; /* Adjust logo size for smaller screens */
+  }
+
+  nav ul {
+    display: none; /* Hide menu items by default */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #23527c74;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    z-index: 10;
+  }
+
+  nav ul.active {
+    display: flex; /* Show menu when active */
+  }
+
+  nav li {
+    margin: 10px 0; /* Vertical spacing for stacked items */
+  }
+
+  nav a {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .menu-toggle {
+    display: block; /* Show menu toggle button */
+  }
 }
 
 .card {
@@ -112,13 +155,13 @@ p {
 .projects {
   /* Add some basic styling to the card */
   color: #ccc;
-  background-color: rgba(44, 62, 129, 0.3);
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
+  background-color: #1e2a38;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 25px;
   width: 80%;
-  margin: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out; /* Add a transition effect */
 }
 
@@ -130,6 +173,7 @@ p {
   /* Add a hover effect to the card */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px); /* Move the card up slightly on hover */
+  background-color: #2a3c4c;
 }
 
 .contact-info {
@@ -147,9 +191,28 @@ p {
   font-size: 25px;
 }
 
-.fab 
+
+.contact-info a {
+  margin: 0 5px;
+  font-size: 25px;
+}
+
+.contact-info a:hover {
+  color: #ffeb3b;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
 
 .contact-links a {
+  
   text-decoration: none;
   color: #337ab7; /* or any other color you prefer */
 }
@@ -171,21 +234,20 @@ p {
   margin-bottom: 20px;
 }
 
-.skills {
-  display: grid;
-  grid-row: auto;
-  grid-column: auto;
+.skills, .experience {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .technical-skills,
 .soft-skills,
 .tools {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+  flex-wrap: wrap;
+  gap: 15px;
 }
+
 
 .technical-skills h3,
 .soft-skills h3,
@@ -209,6 +271,21 @@ p {
 .experience-location,
 .experience-dates {
   color: #666;
+}
+
+.projects div {
+  background-color: #2b3a42;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.projects-title {
+  font-size: 1.3em;
+}
+
+.projects-details {
+  margin-top: 10px;
 }
 
 .projects-title a {
@@ -273,16 +350,18 @@ p {
   }
 }
 
+
 footer {
-  height: 10px;
-  max-width: fit-content;
+  background: linear-gradient(to right, #23527c, #1d2a6a);
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
   position: relative;
   bottom: 0;
-  left: 40%;
-  color: #666;
+  width: 100%;
 }
 
 footer p {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
 }

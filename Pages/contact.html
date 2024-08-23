@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="/Styles/contact-style.css">
-</head>
-<body>
-<header>
-    <nav>
+    <link rel="stylesheet" href="/Styles/contact-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+          <!-- Icon for the menu button -->
+        </button>
         <ul>
-            <li><a href="../index.html" class="nav-link">Home</a></li>
-            <li><a href="resume.html" class="nav-link">Resume</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/Pages/resume.html" class="nav-link">Resume</a></li>
+          <li><a href="/Pages/contact.html" class="nav-link">Contact</a></li>
         </ul>
-    </nav>
-</header>
-<main>
-    <section class="contact">
+        <div class="logo" style="font-family: 'Pacifico', cursive">
+          <p>AnVe</p>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="contact">
         <h1>Contact Us</h1>
         <form id="contact-form">
-            <input type="text" id="subject" name="subject" required placeholder="Subject">
-            <textarea id="message" name="message" required placeholder="Message"></textarea>
-            <button type="submit">Send Message</button>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            placeholder="Subject"
+          />
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Message"
+          ></textarea>
+          <button type="submit">Send Message</button>
         </form>
-    </section>
-</main>
-<footer>
-    <p>&copy; 2023 Ankit Ved</p>
-</footer>
-<script>
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', (e) => {
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Ankit Ved</p>
+    </footer>
+    <script>
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
         const mailtoLink = `mailto:dev.ankit.ved@gmail.com?subject=${subject}&body=${message}`;
         window.location.href = mailtoLink;
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

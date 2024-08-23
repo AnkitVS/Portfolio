@@ -19,6 +19,9 @@
   <body>
     <header>
       <nav>
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i> <!-- Icon for the menu button -->
+        </button>
         <ul>
           <li><a href="../index.html" class="nav-link">Home</a></li>
           <li><a href="#" class="nav-link">Resume</a></li>
@@ -164,5 +167,11 @@
       <p>&copy; 2023 Ankit Ved</p>
     </footer>
     <script src="/Script/particles.js"></script>
+
+    <script>
+      document.querySelector('.menu-toggle').addEventListener('click', function() {
+          document.querySelector('nav ul').classList.toggle('active');
+      });
+  </script>
   </body>
 </html>
