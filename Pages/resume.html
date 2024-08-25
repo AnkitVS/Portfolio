@@ -25,7 +25,7 @@
         <ul>
           <li><a href="../index.html" class="nav-link">Home</a></li>
           <li><a href="#" class="nav-link">Resume</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="#contact-form" class="nav-link">Contact</a></li>
         </ul>
         <div class="logo" style="font-family: 'Pacifico', cursive">
           <p>AnVe</p>
@@ -164,8 +164,28 @@
       </div>
     </main>
     <footer>
+      <div class="contact-form" id="contact-form-section">
+        <h2>Contact Me</h2>
+        <form id="contact-form" class="contact-form-section" method="post">
+          <input type="text" name="name" id="sender" placeholder="Your Name" required />
+          <textarea name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit" aria-label="Send Message">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
       <p>&copy; 2023 Ankit Ved</p>
     </footer>
+    <script>
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const subject = "Hi,this is "+ document.getElementById("sender").value;
+        const message = document.getElementById("message").value;
+        const mailtoLink = `mailto:dev.ankit.ved@gmail.com?subject=${subject}&body=${message}`;
+        window.location.href = mailtoLink;
+      });
+    </script>
     <script src="/Script/particles.js"></script>
 
     <script>

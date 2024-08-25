@@ -1,438 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <title>Anve's Landing Page</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-      }
 
-      body {
-        background-color: #000; /* black background */
-        font-family: Arial, sans-serif;
-        color: #fff; /* white text */
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Anve's Landing Page</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
-      main{
-        flex: 1;
-      }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-      #particles-js {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
+html {
+  scroll-behavior: smooth;
+}
 
-      header {
-        position: fixed;
-        top: 0;
-        left: 10%;
-        width: 80%;
-        background: linear-gradient(to right, #23527c, #1d2a6a);
-        z-index: 10;
-        border-radius: 50px;
-      }
+body {
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-      nav {
-        display: flex;
-        flex-direction: row;
-        padding: 10px;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        box-sizing: border-box;
-      }
+main {
+  flex: 1;
+}
 
-      nav ul {
-        list-style: none;
-        margin: 0;
-        display: flex;
-        flex: 1;
-      }
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-      nav li {
-        margin-left: 20px; /* add some space between menu items */
-      }
+header {
+  position: fixed;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  background: linear-gradient(to right, #23527c, #1d2a6a);
+  z-index: 10;
+  border-radius: 50px;
+}
 
-      nav a {
-        color: #fff; /* white text color */
-        text-decoration: none; /* remove underline */
-        transition: color 0.2s ease; /* add transition effect */
-      }
+nav {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  box-sizing: border-box;
+}
 
-      nav a:hover {
-        color: #ccc; /* Highlight color on hover */
-      }
+nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex: 1;
+}
 
-      .logo {
-        font-family: "Pacifico", cursive;
-        font-size: 25px;
-        color: #ffffff;
-        white-space: nowrap;
-      }
+nav li {
+  margin-left: 20px;
+}
 
-      .menu-toggle {
-        display: none; /* Hidden by default */
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 0;
-      }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-      @media (max-width: 768px) {
-        nav {
-          padding: 10px; /* Adjust padding if needed */
-        }
+nav a:hover {
+  color: #ccc;
+}
 
-        .logo {
-          font-size: 20px; /* Adjust logo size for smaller screens */
-        }
+.logo {
+  font-family: "Pacifico", cursive;
+  font-size: 25px;
+  color: #ffffff;
+  white-space: nowrap;
+}
 
-        nav ul {
-          display: none; /* Hide menu items by default */
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-          background-color: #23527c74;
-          position: absolute;
-          top: 60px; /* Adjust based on header height */
-          left: 0;
-          z-index: 10;
-        }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
 
-        nav ul.active {
-          display: flex; /* Show menu when active */
-        }
+@media (max-width: 768px) {
+  nav {
+    padding: 10px;
+  }
 
-        nav li {
-          margin: 10px 0; /* Vertical spacing for stacked items */
-        }
+  .logo {
+    font-size: 20px;
+  }
 
-        nav a {
-          font-size: 16px; /* Adjust font size for smaller screens */
-        }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #23527c74;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+  }
 
-        .menu-toggle {
-          display: block; /* Show menu toggle button */
-        }
-      }
+  nav ul.active {
+    display: flex;
+  }
 
-      .container {
-        max-width: 1200px;
-        margin: 100px auto 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 50px 20px;
-      }
+  nav li {
+    margin: 10px 0;
+  }
 
-      .intro {
-        flex: 2;
-      }
+  nav a {
+    font-size: 16px;
+  }
 
-      .portrait {
-        flex: 1;
-        text-align: center;
-      }
+  .menu-toggle {
+    display: block;
+  }
+}
 
-      .portrait img {
-        width: 100%;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        animation: moveUpDown 2s infinite;
-      }
+.container {
+  max-width: 1200px;
+  margin: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+}
 
-      @keyframes moveUpDown {
-        0% {
-          transform: translateY(0px);
-        }
+.intro {
+  flex: 2;
+}
 
-        50% {
-          transform: translateY(-10px);
-        }
+.portrait {
+  flex: 1;
+  text-align: center;
+}
 
-        100% {
-          transform: translateY(0px);
-        }
-      }
+.portrait img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: moveUpDown 2s infinite;
+}
 
-      .wave {
-        animation: wave 1s infinite ease-out;
-        transform-origin: 60% 70%;
-        display: inline-block;
-      }
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
-      @keyframes wave {
-        0% {
-          transform: rotate(-20deg);
-        }
-        15% {
-          transform: rotate(-10deg);
-        }
-        30% {
-          transform: rotate(0deg);
-        }
-        50% {
-          transform: rotate(10deg);
-        }
-        65% {
-          transform: rotate(20deg);
-        }
-        80% {
-          transform: rotate(10deg);
-        }
-        95% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(-10deg);
-        }
-      }
+.wave {
+  animation: wave 1s infinite ease-out;
+  transform-origin: 60% 70%;
+  display: inline-block;
+}
 
-      .typewriter {
-        width: 26ch;
-        animation: typing 4s steps(22),
-          backspace 4s steps(26) infinite alternate;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 3px solid;
-        font-family: monospace;
-        font-size: 1.7em;
-      }
+@keyframes wave {
+  0% {
+    transform: rotate(-20deg);
+  }
+  15% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  65% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  95% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
 
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-      }
+.typewriter {
+  width: 26ch;
+  animation: typing 4s steps(22), backspace 4s steps(26) infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 1.7em;
+}
 
-      @keyframes backspace {
-        0%,
-        100% {
-          width: 26ch;
-        }
-        50% {
-          width: 0;
-        }
-      }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
 
-      .name {
-        position: relative;
-        transition: text-shadow 0.2s;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 800;
-        font-size: 40px;
-        z-index: 1;
-      }
+@keyframes backspace {
+  0%, 100% {
+    width: 26ch;
+  }
+  50% {
+    width: 0;
+  }
+}
 
-      .name:hover {
-        text-shadow: 0 0 20px #7cfc00;
-      }
+.name {
+  position: relative;
+  transition: text-shadow 0.2s;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 800;
+  font-size: 40px;
+  z-index: 1;
+}
 
-      .about {
-        font-family: "Playwrite HR";
-        font-size: 25px;
-        font-weight: bolder;
-        font-style: normal;
-      }
+.name:hover {
+  text-shadow: 0 0 20px #7cfc00;
+}
 
-      @media only screen and (max-width: 768px) {
-        .container {
-          flex-direction: column;
-          align-items: center;
-          margin: 0;
-        }
+.about {
+  font-family: "Playwrite HR";
+  font-size: 25px;
+  font-weight: bolder;
+  font-style: normal;
+}
 
-        .intro {
-          flex-basis: 100%;
-        }
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
 
-        .portrait {
-          order: -1;
-          flex-basis: 100%;
-          margin-top: 20px;
-        }
+  .intro {
+    flex-basis: 100%;
+  }
 
-        .portrait img {
-          width: 50%; /* reduce image size on mobile */
-        }
-      }
+  .portrait {
+    order: -1;
+    flex-basis: 100%;
+    margin-top: 20px;
+  }
 
-      footer {
-        background: linear-gradient(to right, #23527c, #1d2a6a);
-        padding: 10px 0;
-        color: #fff;
-        text-align: center;
-        align-content: center;
-        position: relative;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50px;
-      }
+  .portrait img {
+    width: 50%;
+  }
+}
 
-      footer p {
-        top: 100px;
-        font-size: 1.2em;
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/dist/particles.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <button class="menu-toggle">
-          <i class="fas fa-bars"></i>
-          <!-- Icon for the menu button -->
-        </button>
-        <ul>
-          <li><a href="#" class="nav-link">Home</a></li>
-          <li><a href="/Pages/resume.html" class="nav-link">Resume</a></li>
-          <li><a href="/Pages/contact.html" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="logo" style="font-family: 'Pacifico', cursive">
-          <p>AnVe</p>
-        </div>
-      </nav>
-    </header>
-    <div id="particles-js"></div>
-    <main>
-      <div class="container">
-        <div class="intro">
-          <h1>
-            Hi<span class="wave">👋</span><br />
-            I'm <span class="name" style="color: #7cfc00">Ankit Ved</span>
-          </h1>
-          <p class="typewriter" style="color: #eedc82">
-            Quality Assurance Engineer
-          </p>
-          <p class="about">
-            Experienced Software Engineer specializing in Testing for insurance
-            projects, with over 3 years of hands-on experience. Skilled in
-            collaborating within diverse deployment teams and currently
-            excelling in L3 QA, ensuring the highest standards of quality
-            assurance.
-          </p>
-        </div>
-        <div class="portrait">
-          <img src="your_self_portrait_image.jpg" alt="Anve's Self Portrait" />
-        </div>
+footer{
+  position: relative;
+}
+
+footer p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.contact-form-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  z-index: 10;
+  width: 50%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-image: linear-gradient(to right, #23527c, #1d2a6a);
+  color: #fff;
+  background-clip: padding-box;
+  pointer-events: auto;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #23527c;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button i {
+  font-size: 1.2em;
+}
+
+.contact-form button:hover {
+  background-color: #1d2a6a;
+}
+
+footer p {
+  text-align: center; 
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/dist/particles.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+        <!-- Icon for the menu button -->
+      </button>
+      <ul>
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="/Pages/resume.html" class="nav-link">Resume</a></li>
+        <li><a href="#contact-form-section" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="logo" style="font-family: 'Pacifico', cursive">
+        <p>AnVe</p>
       </div>
-    </main>
-    <footer>
-      <p>&copy; 2023 Ankit Ved</p>
-    </footer>
-    <script>
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          max_particles: { value: 100 },
-          color: { value: "#ffffff" },
-          shape: {
-            type: "triangle",
-            stroke: { width: 0, color: "#000000" },
-            polygon: { nb_sides: 5 },
-            image: { src: "img/github.svg", width: 100, height: 100 },
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
-          },
-          size: {
-            value: 3.9385584875935393,
-            random: true,
-            anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 4,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "bounce",
-            bounce: false,
-            attract: { enable: false, rotateX: 600, rotateY: 1200 },
-          },
+    </nav>
+  </header>
+  <div id="particles-js"></div>
+  <main>
+    <div class="container">
+      <div class="intro">
+        <h1>
+          Hi<span class="wave">👋</span><br />
+          I'm <span class="name" style="color: #7cfc00">Ankit Ved</span>
+        </h1>
+        <p class="typewriter" style="color: #eedc82">
+          Quality Assurance Engineer
+        </p>
+        <p class="about">
+          Experienced Software Engineer specializing in Testing for insurance
+          projects, with over 3 years of hands-on experience. Skilled in
+          collaborating within diverse deployment teams and currently
+          excelling in L3 QA, ensuring the highest standards of quality
+          assurance.
+        </p>
+      </div>
+      <div class="portrait">
+        <img src="your_self_portrait_image.jpg" alt="Anve's Self Portrait" />
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="contact-form" id="contact-form-section">
+      <h2>Contact Me</h2>
+      <form id="contact-form" class="contact-form-section" method="post">
+        <input type="text" name="name" id="sender" placeholder="Your Name" required />
+        <textarea name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" aria-label="Send Message">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+    <p>&copy; 2023 Ankit Ved</p>
+  </footer>
+  <script>
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const subject = "Hi,this is "+ document.getElementById("sender").value;
+      const message = document.getElementById("message").value;
+      const mailtoLink = `mailto:dev.ankit.ved@gmail.com?subject=${subject}&body=${message}`;
+      window.location.href = mailtoLink;
+    });
+  </script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        max_particles: { value: 100 },
+        color: { value: "#ffffff" },
+        shape: {
+          type: "triangle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 5 },
+          image: { src: "img/github.svg", width: 100, height: 100 },
         },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: false, mode: "repulse" },
-            onclick: { enable: true, mode: "push" },
-            resize: true,
-          },
-          modes: {
-            grab: { distance: 400, line_linked: { opacity: 1 } },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3,
-            },
-            repulse: { distance: 0, duration: 0.4 },
-            push: { particles_nb: 4 },
-            remove: { particles_nb: 2 },
-          },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
         },
-        retina_detect: true,
-      });
-      let count_particles, stats, update;
-      stats = new Stats();
-      stats.setMode(0);
-      stats.domElement.style.position = "absolute";
-      stats.domElement.style.left = "0px";
-      stats.domElement.style.top = "0px";
-      document.body.appendChild(stats.domElement);
-      count_particles = document.querySelector(".js-count-particles");
-      update = function () {
-        stats.begin();
-        stats.end();
-        if (
-          window.pJSDom[0].pJS.particles &&
-          window.pJSDom[0].pJS.particles.array
-        ) {
-          count_particles.innerText =
-            window.pJSDom[0].pJS.particles.array.length;
-        }
-        requestAnimationFrame(update);
-      };
+        size: {
+          value: 3.9385584875935393,
+          random: true,
+          anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 4,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "bounce",
+          bounce: false,
+          attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: false, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 400, line_linked: { opacity: 1 } },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3,
+          },
+          repulse: { distance: 0, duration: 0.4 },
+          push: { particles_nb: 4 },
+          remove: { particles_nb: 2 },
+        },
+      },
+      retina_detect: true,
+    });
+    let count_particles, stats, update;
+    stats = new Stats();
+    stats.setMode(0);
+    stats.domElement.style.position = "absolute";
+    stats.domElement.style.left = "0px";
+    stats.domElement.style.top = "0px";
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector(".js-count-particles");
+    update = function () {
+      stats.begin();
+      stats.end();
+      if (
+        window.pJSDom[0].pJS.particles &&
+        window.pJSDom[0].pJS.particles.array
+      ) {
+        count_particles.innerText =
+          window.pJSDom[0].pJS.particles.array.length;
+      }
       requestAnimationFrame(update);
-    </script>
-    <script>
-      document
-        .querySelector(".menu-toggle")
-        .addEventListener("click", function () {
-          document.querySelector("nav ul").classList.toggle("active");
-        });
-    </script>
-  </body>
+    };
+    requestAnimationFrame(update);
+  </script>
+  <script>
+    document
+      .querySelector(".menu-toggle")
+      .addEventListener("click", function () {
+        document.querySelector("nav ul").classList.toggle("active");
+      });
+  </script>
+</body>
+
 </html>

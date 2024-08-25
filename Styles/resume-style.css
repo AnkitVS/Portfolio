@@ -119,7 +119,7 @@ nav a:hover {
 }
 
 .resume {
-  margin: 50px auto;
+  margin: 80px auto;
   max-width: 60%;
   display: flex;
   flex-direction: column;
@@ -351,17 +351,72 @@ h3 {
 }
 
 
-footer {
-  background: linear-gradient(to right, #23527c, #1d2a6a);
-  padding: 10px 0;
-  color: #fff;
-  text-align: center;
+footer{
   position: relative;
-  bottom: 0;
-  width: 100%;
+}
+
+.contact-form {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.contact-form-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  z-index: 10;
+  width: 50%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-image: linear-gradient(to right, #23527c, #1d2a6a);
+  color: #fff;
+  background-clip: padding-box;
+  pointer-events: auto;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #23527c;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button i {
+  font-size: 1.2em;
+}
+
+.contact-form button:hover {
+  background-color: #1d2a6a;
 }
 
 footer p {
+  text-align: center; 
   font-size: 1.2em;
-  margin: 0;
+  margin-bottom: 10px;
+  color: #fff;
 }
