@@ -39,6 +39,14 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
+        if: github.ref == 'refs/heads/master'
         uses: actions/deploy-pages@v4
         with:
-          cname: ${{ github.ref == 'refs/heads/master' && 'ankitved.dev' || 'ankitved.in' }}
+          cname: ankitved.dev
+          
+      - name: Deploy to GitHub Pages
+        id: deployment_development
+        if: github.ref != 'refs/heads/master'
+        uses: actions/deploy-pages@v4
+        with:
+          cname: ankitved.in
