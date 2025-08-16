@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ankit Ved — QA Engineer | Automation | DuckCreek</title>
     <meta
       name="description"
       content="Ankit Ved — QA Engineer. Automation testing with Postman, Katalon, Selenium. DuckCreek P&C insurance specialist. Portfolio & case studies."
     />
-    <meta
-      name="keywords"
-      content="Ankit Ved, Quality Assurance, Software Engineer, Portfolio"
-    />
-    <meta name="author" content="Ankit Ved" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sort"
     />
-    <title>Ankit Ved — QA Engineer | Automation</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Permanent+Marker&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
       /* ---------------------------------------------
        VARIABLES / THEME
     ----------------------------------------------*/
@@ -33,21 +27,24 @@
         --accent-2: #2563eb; /* deep blue */
         --glass: rgba(255, 255, 255, 0.03);
         --radius: 14px;
-        --max-width: 1100px;
+        --max-width: 1300px;
         --mono: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       }
+
+      /* ---------------------------------------------
+       BASE / LAYOUT
+    ----------------------------------------------*/
       * {
-        margin: 0;
-        padding: 0;
         box-sizing: border-box;
       }
 
       body {
         height: 100%;
         margin: 0;
-        background: linear-gradient(180deg, #0f1724, #071022 120%);
-        font-family: var(--mono);
+        background: linear-gradient(180deg, var(--bg), #071022 120%);
         color: #e6eef6;
+        font-family: var(--mono);
+        -webkit-font-smoothing: antialiased;
       }
 
       #particles-js {
@@ -57,6 +54,15 @@
         width: 100%;
         height: 100%;
         z-index: -1;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
       }
 
       .container {
@@ -90,12 +96,10 @@
         color: #06202a;
       }
       .brand h1 {
-        font-size: 18px;
         margin: 0;
       }
       .brand p {
         margin: 0;
-        font-size: 13px;
         color: var(--muted);
       }
 
@@ -114,25 +118,14 @@
         align-items: center;
         gap: 8px;
       }
-
-      .primary.btn {
+      .btn.primary {
         background: linear-gradient(90deg, var(--accent), var(--accent-2));
         color: #021024;
         border: none;
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      nav a:hover {
-        color: #ccc;
-      }
-
       /* ---------------------------------------------
-       MAIN
+       intro
     ----------------------------------------------*/
       .intro {
         display: grid;
@@ -183,6 +176,69 @@
       }
 
       .typewriter {
+        position: relative;
+        display: inline-block;
+        font-family: monospace;
+        font-size: 1.7em;
+        line-height: 1.2;
+      }
+
+      /* Reserves width using the longest string but stays invisible */
+      .typewriter-ghost {
+        visibility: hidden;
+        white-space: nowrap;
+      }
+
+      /* Actual animated text sits on top and sizes to content */
+      .typewriter-live {
+        position: absolute;
+        left: 0;
+        top: 0;
+        white-space: nowrap;
+        border-right: 3px solid currentColor;
+        background: linear-gradient(90deg, #00f5a0, #00d9f5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-right: 3px solid #00f5a0;
+        animation: blink 0.7s steps(1) infinite,
+          cursorGlow 1.5s ease-in-out infinite alternate;
+
+        font-family: monospace;
+        font-size: 1.2em;
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      @keyframes glow {
+        from {
+          border-color: #00f5a0;
+        }
+        to {
+          border-color: #00d9f5;
+        }
+      }
+
+      /*.typewriter {
+        border-right: 3px solid;
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: monospace;
+        font-size: 1.7em;
+        display: inline-block;
+        animation: blink 0.7s steps(1) infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      /* .typewriter {
         width: 26ch;
         animation: typing 4s steps(22),
           backspace 4s steps(26) infinite alternate;
@@ -208,22 +264,9 @@
         50% {
           width: 0;
         }
-      }
+      } */
 
-      .name {
-        position: relative;
-        transition: text-shadow 0.2s;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 800;
-        font-size: 40px;
-        z-index: 1;
-      }
-
-      .name:hover {
-        text-shadow: 0 0 20px #7cfc00;
-      }
-
-      .intro-left h1 {
+      .intro-left h2 {
         margin: 0;
         font-size: 32px;
       }
@@ -231,19 +274,13 @@
       .intro-left p {
         color: var(--muted);
         line-height: 1.5;
+        font-size: large;
       }
 
       .intro-cta {
         display: flex;
         gap: 12px;
         margin-top: 18px;
-      }
-
-      .about {
-        font-family: "Playwrite HR";
-        font-size: 25px;
-        font-weight: bolder;
-        font-style: normal;
       }
 
       .card {
@@ -275,7 +312,7 @@
       .stat p {
         margin: 4px 0 0;
         color: var(--muted);
-        font-size: 13px;
+        font-size: 14px;
       }
 
       /* ---------------------------------------------
@@ -309,7 +346,7 @@
       }
       .skill span {
         display: block;
-        font-size: 12px;
+        font-size: 13px;
         color: var(--muted);
       }
 
@@ -468,7 +505,7 @@
        RESPONSIVE
     ----------------------------------------------*/
       @media (max-width: 980px) {
-        .hero {
+        .intro {
           grid-template-columns: 1fr;
         }
         .projects {
@@ -507,13 +544,8 @@
         transform: none;
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/dist/particles.min.css"
-    />
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   </head>
-
   <body>
     <div class="container">
       <header>
@@ -521,115 +553,121 @@
           <div class="logo">AnVe</div>
           <div>
             <h1>Ankit Ved</h1>
-            <p>
-              QA Engineer • Automation (Postman, Katalon, Selenium) • DuckCreek
-              P&C
-            </p>
+            <p>QA Engineer | Automation Enthusiast | Problem Solver</p>
           </div>
         </div>
         <nav>
-          <a href="#about" class="btn">About</a>
-          <a href="#experience" class="btn">Experience</a>
-          <a href="#projects" class="btn">Projects</a>
-          <button id="viewResume" class="btn primary">View Resume</button>
+          <a class="btn" href="#about">About</a>
+          <a class="btn" href="#projects">Projects</a>
+          <a class="btn" href="#experience">Experience</a>
+          <button class="btn primary" id="viewResume">View Resume</button>
         </nav>
       </header>
       <div id="particles-js"></div>
-      <main>
-        <!-- intro section -->
-        <section class="intro">
-          <div class="intro-left">
-            <h1>
-              Hi <span class="wave">👋</span><br />I'm
-              <span style="color: var(--accent)">Ankit Ved</span>
-            </h1>
-            <p class="typewriter" style="color: #eedc82">
-              Quality Assurance Engineer
-            </p>
-            <p class="about">
-              QA Engineer with a solid background in testing and Java.
-              Experienced in ensuring quality for property and casualty (P&C)
-              DuckCreek policy projects.
-            </p>
-            <div class="intro-cta">
-              <a href="#projects" class="btn">See Projects</a>
-              <a href="mailto:dev.ankit.ved@gmail.com" class="btn"
-                >Hire / Contact</a
-              >
+      <!-- intro -->
+      <section class="intro" id="intro">
+        <div class="intro-left">
+          <h2>
+            Hi <span class="wave">👋</span><br />I'm
+            <span style="color: var(--accent)">Ankit Ved</span>
+          </h2>
+          <p class="typewriter" id="typewriter">
+            <span class="typewriter-ghost" aria-hidden="true"></span>
+            <span class="typewriter-live"></span>
+          </p>
+          <p>
+            Results-driven QA Engineer with 3.5+ years in DuckCreek Insurance
+            with a solid background in testing and Java. Experienced in ensuring
+            quality for property and casualty (P&C) DuckCreek policy projects.
+          </p>
+
+          <div class="intro-cta">
+            <a href="#projects" class="btn">See Projects</a>
+            <a href="mailto:dev.ankit.ved@gmail.com" class="btn"
+              >Hire / Contact</a
+            >
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <h3>4+</h3>
+              <p>Years experience</p>
             </div>
-            <div class="stats">
-              <div class="stat">
-                <h3>3.5+</h3>
-                <p>Years experience</p>
+            <div class="stat">
+              <h3>Selenium / Katalon</h3>
+              <p>Automation focus</p>
+            </div>
+            <div class="stat">
+              <h3>DuckCreek</h3>
+              <p>P&C domain</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR CARD -->
+        <aside class="card fade-up" style="padding: 18px">
+          <h3 style="margin: 0">Skills & Tools</h3>
+          <p style="margin: 6px 0 0; color: var(--muted); font-size: 14px">
+            Bug Catcher | Code Tester | Experience Enhancer
+          </p>
+
+          <div class="skills-grid" id="skills">
+            <div class="skill fade-up">
+              <em class="material-symbols-outlined"> sort </em>
+              <div>
+                <strong>API Testing</strong><span>Postman, Katalon</span>
               </div>
-              <div class="stat">
-                <h3>Postman / Katalon / Selenium</h3>
-                <p>Automation focus</p>
+            </div>
+            <div class="skill fade-up">
+              <em class="material-symbols-outlined"> sort </em>
+              <div>
+                <strong>Automation</strong><span>Katalon, Selenium</span>
               </div>
-              <div class="stat">
-                <h3>DuckCreek</h3>
-                <p>P&C domain</p>
+            </div>
+            <div class="skill fade-up">
+              <em class="material-symbols-outlined"> sort </em>
+              <div><strong>Languages</strong><span>Groovy, Java, JS</span></div>
+            </div>
+            <div class="skill fade-up">
+              <em class="material-symbols-outlined"> sort </em>
+              <div><strong>Databases</strong><span>MySQL</span></div>
+            </div>
+            <div class="skill fade-up">
+              <em class="material-symbols-outlined"> sort </em>
+              <div>
+                <strong>Domain</strong
+                ><span>Property & Casualty Insurance</span>
+              </div>
+            </div>
+            <div class="skill fade-up">
+              <em class="material-symbols-outlined"> sort </em>
+              <div>
+                <strong>Tools</strong
+                ><span>Postman, Katalon, ADO, Jira, Git, TAC</span>
               </div>
             </div>
           </div>
+        </aside>
+      </section>
 
-          <aside class="card fade-up" style="padding: 18px">
-            <h3 style="margin: 0">Skills & Tools</h3>
-            <p style="margin: 6px 0 0; color: var(--muted); font-size: 13px">
-              Focused on QA, automation, and testability
-            </p>
+      <!-- ABOUT -->
+      <section id="about" style="margin-top: 20px">
+        <div class="card">
+          <h3>About</h3>
+          <p style="color: var(--muted)">
+            I combine softypewriterare testing fundamentals with practical
+            automation to deliver reliable releases. I own end-to-end test
+            coverage for APIs and UI flows, perform deep SQL validations, and
+            collaborate with product and dev teams to reduce critical defects in
+            production. I mentor peers on test design and work to integrate
+            security checks into the QA lifecycle.
+          </p>
+        </div>
+      </section>
 
-            <div class="skills-grid" id="skills">
-              <div class="skill fade-up">
-                <div>
-                  <strong>API Testing</strong><span>Postman, Newman</span>
-                </div>
-              </div>
-              <div class="skill fade-up">
-                <div>
-                  <strong>Automation</strong><span>Katalon, Selenium</span>
-                </div>
-              </div>
-              <div class="skill fade-up">
-                <div><strong>Languages</strong><span>Java, JDBC</span></div>
-              </div>
-              <div class="skill fade-up">
-                <div>
-                  <strong>Databases</strong
-                  ><span>MySQL, Oracle, SQL validations</span>
-                </div>
-              </div>
-              <div class="skill fade-up">
-                <div>
-                  <strong>Domain</strong
-                  ><span>Property & Casualty, DuckCreek</span>
-                </div>
-              </div>
-              <div class="skill fade-up">
-                <div><strong>Tools</strong><span>Jira, Git, TAC</span></div>
-              </div>
-            </div>
-          </aside>
-        </section>
-
-        <section id="about" style="margin-top: 20px">
-          <div class="card">
-            <h3>About</h3>
-            <p style="color: var(--muted)">
-              I combine software testing fundamentals with practical automation
-              to deliver reliable releases. I own end-to-end test coverage for
-              APIs and UI flows, perform deep SQL validations, and collaborate
-              with product and dev teams to reduce critical defects in
-              production. I mentor peers on test design and work to integrate
-              security checks into the QA lifecycle.
-            </p>
-          </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <!-- PROJECTS -->
+      <!-- PROJECTS -->
       <section id="projects">
-        <h3 style="margin-top: 18px">Selected Projects</h3>
+        <h3 style="margin-top: 18px">Projects</h3>
         <div class="projects" id="projectGrid">
           <article class="project-card card fade-up inview">
             <div class="project-thumb">
@@ -775,8 +813,8 @@
         </div>
       </section>
 
-        <!-- EXPERIENCE / TIMELINE -->
-        <section id="experience">
+      <!-- EXPERIENCE / TIMELINE -->
+      <section id="experience">
         <h3 style="margin-top: 18px">Experience</h3>
         <div class="timeline" id="timeline">
           <div class="timeline-item fade-up inview">
@@ -821,115 +859,258 @@
         </div>
       </section>
 
-        <!-- CONTACT -->
-        <section id="contact">
-          <h3 style="margin-top: 18px">Contact</h3>
-          <div class="contact-grid">
-            <div class="card">
-              <form id="contactForm">
-                <input id="name" placeholder="Your name" required />
-                <input
-                  id="email"
-                  placeholder="Your email"
-                  type="email"
-                  required
-                />
-                <input id="subject" placeholder="Subject" />
-                <textarea
-                  id="message"
-                  placeholder="Message"
-                  required
-                ></textarea>
-                <div
-                  style="display: flex; gap: 8px; justify-content: flex-start"
-                >
-                  <button type="submit" class="btn primary">
-                    Send Message
-                  </button>
-                  <button type="button" class="btn" id="downloadResume">
-                    Download Resume
-                  </button>
-                </div>
-                <p
-                  id="formStatus"
-                  style="color: var(--muted); font-size: 13px"
-                ></p>
-              </form>
+      <!-- CONTACT -->
+      <section id="contact">
+        <h3 style="margin-top: 18px">Contact</h3>
+        <div class="contact-grid">
+          <div class="card">
+            <form id="contactForm">
+              <input id="name" placeholder="Your name" required />
+              <input
+                id="email"
+                placeholder="Your email"
+                type="email"
+                required
+              />
+              <input id="subject" placeholder="Subject" />
+              <textarea id="message" placeholder="Message" required></textarea>
+              <div style="display: flex; gap: 8px; justify-content: flex-start">
+                <button type="submit" class="btn primary">Send Message</button>
+                <button type="button" class="btn" id="downloadResume">
+                  Download Resume
+                </button>
+              </div>
+              <p
+                id="formStatus"
+                style="color: var(--muted); font-size: 13px"
+              ></p>
+            </form>
+          </div>
+
+          <aside class="card">
+            <h4>Quick links</h4>
+            <div
+              style="
+                margin-top: 8px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+              "
+            >
+              <a
+                class="btn"
+                href="https://www.linkedin.com/in/replace-linkedin"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a
+                class="btn"
+                href="https://github.com/replace-github"
+                target="_blank"
+                >GitHub</a
+              >
+              <a class="btn" href="mailto:dev.ankit.ved@gmail.com">Email</a>
             </div>
 
-            <aside class="card">
-              <h4>Quick links</h4>
-              <div
-                style="
-                  margin-top: 8px;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 8px;
-                "
-              >
-                <a
-                  class="btn"
-                  href="https://www.linkedin.com/in/replace-linkedin"
-                  target="_blank"
-                  >LinkedIn</a
-                >
-                <a
-                  class="btn"
-                  href="https://github.com/replace-github"
-                  target="_blank"
-                  >GitHub</a
-                >
-                <a class="btn" href="mailto:replace-with-your-email@example.com"
-                  >Email</a
-                >
-              </div>
-
-              <h4 style="margin-top: 12px">Tech stack</h4>
-              <div
-                style="
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 8px;
-                  margin-top: 8px;
-                "
-              >
-                <div class="tag">Postman</div>
-                <div class="tag">Katalon</div>
-                <div class="tag">Selenium</div>
-                <div class="tag">Java</div>
-                <div class="tag">SQL</div>
-                <div class="tag">DuckCreek</div>
-              </div>
-            </aside>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <div class="contact-form" id="contact-form-section">
-          <h2>Contact Me</h2>
-          <form id="contact-form" class="contact-form-section" method="post">
-            <input
-              type="text"
-              name="name"
-              id="sender"
-              placeholder="Your Name"
-              required
-            />
-            <textarea
-              name="message"
-              id="message"
-              rows="4"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <button type="submit" aria-label="Send Message">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
+            <h4 style="margin-top: 12px">Tech stack</h4>
+            <div
+              style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px"
+            >
+              <div class="tag">Postman</div>
+              <div class="tag">Katalon</div>
+              <div class="tag">Selenium</div>
+              <div class="tag">Java</div>
+              <div class="tag">SQL</div>
+              <div class="tag">DuckCreek</div>
+            </div>
+          </aside>
         </div>
-        <p>&copy; 2023 Ankit Ved</p>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Ankit Ved — Built with HTML, CSS & JS.
       </footer>
     </div>
+
+    <!-- MODAL: Resume / Project -->
+    <div class="modal" id="modal">
+      <div class="modal-card">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div style="font-weight: 700; color: var(--accent)">Preview</div>
+          <div class="modal-close" id="modalClose">✕</div>
+        </div>
+        <div id="modalBody" style="margin-top: 10px">
+          <!-- dynamic content -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const texts = [
+        "Breaking code so users don’t have to.",
+        "I don’t test software. I stress it till it snaps.",
+        "I turn messy code into flawless experiences.",
+        "Breaking software beautifully.",
+        "Quality isn’t a checkbox, it’s a vibe.",
+        "Your shield between product and chaos",
+        "I catch the cracks before anyone falls through.",
+        "Where testing meets trust.",
+        "Your software’s toughest critic—and biggest ally.",
+        "Turning breakpoints into breakthroughs.",
+      ];
+
+      const wrap = document.getElementById("typewriter");
+      const ghost = wrap.querySelector(".typewriter-ghost");
+      const live = wrap.querySelector(".typewriter-live");
+
+      // Reserve width = longest string
+      const longest = texts.reduce((a, b) => (a.length > b.length ? a : b), "");
+      ghost.textContent = longest;
+
+      let tIdx = 0; // which text
+      let cIdx = 0; // char index
+      let typing = true;
+
+      const typeSpeed = 90; // ms per char
+      const eraseSpeed = 45; // ms per char (faster erase)
+      const holdTime = 1000; // pause after full word
+
+      function tick() {
+        const text = texts[tIdx];
+        live.textContent = text.slice(0, cIdx);
+
+        if (typing) {
+          if (cIdx < text.length) {
+            cIdx++;
+            setTimeout(tick, typeSpeed);
+          } else {
+            typing = false;
+            setTimeout(tick, holdTime);
+          }
+        } else {
+          if (cIdx > 0) {
+            cIdx--;
+            setTimeout(tick, eraseSpeed);
+          } else {
+            typing = true;
+            tIdx = (tIdx + 1) % texts.length;
+            setTimeout(tick, 350);
+          }
+        }
+      }
+      tick();
+
+      // ------------------------------
+      // Data (replace placeholders with real content)
+      // ------------------------------
+      const resumeUrl = "AnkitVed_Resume.pdf"; // <--- replace with your hosted resume path or absolute URL
+
+      // ------------------------------
+      // Modal handling
+      // ------------------------------
+      const modal = document.getElementById("modal");
+      const modalBody = document.getElementById("modalBody");
+      const modalClose = document.getElementById("modalClose");
+
+      function openProject(idx) {
+        const p = projects[idx];
+        modalBody.innerHTML = `
+            <h3 style='margin:0'>${p.title}</h3>
+            <p style='color:var(--muted)'>${p.details}</p>
+            <div style='margin-top:10px'><strong>Tools:</strong> ${p.tags.join(
+              ", "
+            )}</div>
+            <div style='margin-top:12px;display:flex;gap:8px'>
+              <a class='btn primary' href='#' onclick="downloadResume();return false">Download Resume</a>
+              <a class='btn' href='#' onclick="closeModal();return false">Close</a>
+            </div>
+          `;
+        openModal();
+      }
+      function openModal() {
+        modal.classList.add("open");
+      }
+      function closeModal() {
+        modal.classList.remove("open");
+      }
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // ------------------------------
+      // Resume viewer + download
+      // ------------------------------
+      const viewResumeBtn = document.getElementById("viewResume");
+      const downloadResumeBtn = document.getElementById("downloadResume");
+
+      viewResumeBtn.addEventListener("click", () => {
+        modalBody.innerHTML = `<iframe src="${resumeUrl}" style="width:100%;height:70vh;border:0;border-radius:8px"></iframe>`;
+        openModal();
+      });
+
+      downloadResumeBtn.addEventListener("click", downloadResume);
+      function downloadResume() {
+        // fallback: open resume in new tab; many sites host resume publicly
+        window.open(resumeUrl, "_blank");
+      }
+
+      // ------------------------------
+      // Contact form: simple validation & mailto fallback
+      // ------------------------------
+      const form = document.getElementById("contactForm");
+      const formStatus = document.getElementById("formStatus");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject =
+          document.getElementById("subject").value.trim() || "Website contact";
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+          formStatus.textContent = "Please fill required fields";
+          return;
+        }
+
+        // Prefer server-side submission — here we use mailto fallback to ensure message is delivered.
+        const mailto = `mailto:dev.ankit.ved@gmail.com?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(
+          "Name: " + name + "\nEmail: " + email + "\n\n" + message
+        )}`;
+        window.location.href = mailto;
+        formStatus.textContent = "Opening your mail client — fallback.";
+      });
+
+      // ------------------------------
+      // small helpers
+      // ------------------------------
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // animate on scroll - simple intersection observer
+      const observers = document.querySelectorAll(".fade-up");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("inview");
+          });
+        },
+        { threshold: 0.12 }
+      );
+      observers.forEach((o) => io.observe(o));
+
+      // Accessibility: keyboard close modal
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
     <script>
       particlesJS("particles-js", {
         particles: {
@@ -992,136 +1173,6 @@
           },
         },
         retina_detect: true,
-      });
-      let count_particles, stats, update;
-      stats = new Stats();
-      stats.setMode(0);
-      stats.domElement.style.position = "absolute";
-      stats.domElement.style.left = "0px";
-      stats.domElement.style.top = "0px";
-      document.body.appendChild(stats.domElement);
-      count_particles = document.querySelector(".js-count-particles");
-      update = function () {
-        stats.begin();
-        stats.end();
-        if (
-          window.pJSDom[0].pJS.particles &&
-          window.pJSDom[0].pJS.particles.array
-        ) {
-          count_particles.innerText =
-            window.pJSDom[0].pJS.particles.array.length;
-        }
-        requestAnimationFrame(update);
-      };
-      requestAnimationFrame(update);
-
-    </script>
-
-    <script>
-      // ------------------------------
-      // Data (replace placeholders with real content)
-      // ------------------------------
-      const resumeUrl = "assets/resume-AnkitVed.pdf"; // <--- replace with your hosted resume path or absolute URL
-
-      // ------------------------------
-      // Modal handling
-      // ------------------------------
-      const modal = document.getElementById("modal");
-      const modalBody = document.getElementById("modalBody");
-      const modalClose = document.getElementById("modalClose");
-
-      function openProject(idx) {
-        const p = projects[idx];
-        modalBody.innerHTML = `
-        <h3 style='margin:0'>${p.title}</h3>
-        <p style='color:var(--muted)'>${p.details}</p>
-        <div style='margin-top:10px'><strong>Tools:</strong> ${p.tags.join(
-          ", "
-        )}</div>
-        <div style='margin-top:12px;display:flex;gap:8px'>
-          <a class='btn primary' href='#' onclick="downloadResume();return false">Download Resume</a>
-          <a class='btn' href='#' onclick="closeModal();return false">Close</a>
-        </div>
-      `;
-        openModal();
-      }
-      function openModal() {
-        modal.classList.add("open");
-      }
-      function closeModal() {
-        modal.classList.remove("open");
-      }
-      modalClose.addEventListener("click", closeModal);
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-      });
-
-      // ------------------------------
-      // Resume viewer + download
-      // ------------------------------
-      const viewResumeBtn = document.getElementById("viewResume");
-      const downloadResumeBtn = document.getElementById("downloadResume");
-
-      viewResumeBtn.addEventListener("click", () => {
-        modalBody.innerHTML = `<iframe src="${resumeUrl}" style="width:100%;height:70vh;border:0;border-radius:8px"></iframe>`;
-        openModal();
-      });
-
-      downloadResumeBtn.addEventListener("click", downloadResume);
-      function downloadResume() {
-        // fallback: open resume in new tab; many sites host resume publicly
-        window.open(resumeUrl, "_blank");
-      }
-
-      // ------------------------------
-      // Contact form: simple validation & mailto fallback
-      // ------------------------------
-      const form = document.getElementById("contactForm");
-      const formStatus = document.getElementById("formStatus");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject =
-          document.getElementById("subject").value.trim() || "Website contact";
-        const message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !message) {
-          formStatus.textContent = "Please fill required fields";
-          return;
-        }
-
-        // Prefer server-side submission — here we use mailto fallback to ensure message is delivered.
-        const mailto = `mailto:replace-with-your-email@example.com?subject=${encodeURIComponent(
-          subject
-        )}&body=${encodeURIComponent(
-          "Name: " + name + "\nEmail: " + email + "\n\n" + message
-        )}`;
-        window.location.href = mailto;
-        formStatus.textContent =
-          "Opening your mail client — fallback. For best results, replace mailto fallback with server-side form handling.";
-      });
-
-      // ------------------------------
-      // small helpers
-      // ------------------------------
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // animate on scroll - simple intersection observer
-      const observers = document.querySelectorAll(".fade-up");
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("inview");
-          });
-        },
-        { threshold: 0.12 }
-      );
-      observers.forEach((o) => io.observe(o));
-
-      // Accessibility: keyboard close modal
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeModal();
       });
     </script>
   </body>
