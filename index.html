@@ -391,6 +391,10 @@
         );
         flex: 1;
       }
+
+      .view {
+        color: var(--muted);
+      }
       .tag {
         display: inline-block;
         padding: 6px 8px;
@@ -425,6 +429,33 @@
         flex: 1;
       }
 
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+      .subsection-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .paragraph {
+        margin: 8px 0;
+      }
+      .list {
+        margin: 5px 0 10px 20px;
+      }
+      .list-item {
+        margin-bottom: 5px;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .italic {
+        font-style: italic;
+      }
       /* ---------------------------------------------
        CONTACT
     ----------------------------------------------*/
@@ -696,24 +727,66 @@
               </svg>
             </div>
             <div class="project-body">
-              <h4 style="margin: 0">DAL Automation for DuckCreek</h4>
+              <h4 style="margin: 0">Portfolio Website</h4>
               <p style="color: var(--muted); font-size: 13px; margin: 8px 0">
-                Automated end-to-end API and UI tests for the Data Abstraction
-                Layer. Implemented prioritized test suites and modular scripts
-                to reduce regression cycle time by ~30%.
+                A modern, responsive portfolio website built with HTML, CSS, and
+                JavaScript. Features clean design, interactive elements, and
+                comprehensive skill demonstrations.
               </p>
               <div style="display: flex; gap: 8px; flex-wrap: wrap">
-                <div class="tag">Postman</div>
-                <div class="tag">Katalon</div>
+                <div class="tag">HTML</div>
+                <div class="tag">CSS</div>
+                <div class="tag">JS</div>
+              </div>
+              <div style="margin-top: 10px; display: flex; gap: 8px">
+                <button class="btn view" onclick="openProject(0)">View</button>
+              </div>
+            </div>
+          </article>
+          <article class="project-card card fade-up inview">
+            <div class="project-thumb">
+              <svg
+                width="120"
+                height="60"
+                viewBox="0 0 120 60"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="120"
+                  height="60"
+                  rx="6"
+                  fill="rgba(255,255,255,0.02)"
+                ></rect>
+                <text
+                  x="50%"
+                  y="50%"
+                  dominant-baseline="middle"
+                  text-anchor="middle"
+                  fill="var(--muted)"
+                  font-size="11"
+                >
+                  Screenshot
+                </text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <h4 style="margin: 0">Election Administration System</h4>
+              <p style="color: var(--muted); font-size: 13px; margin: 8px 0">
+                Java Swing desktop application for complete election management.
+                Features secure admin login, voter registration, candidate
+                management, digital voting with duplicate prevention, and
+                automated result calculation. Built with MySQL backend and
+                modular architecture demonstrating full-stack Java development
+                skills.
+              </p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <div class="tag">Java</div>
                 <div class="tag">SQL</div>
               </div>
               <div style="margin-top: 10px; display: flex; gap: 8px">
-                <button class="btn" data-idx="0" onclick="openProject(0)">
+                <button class="btn view" data-idx="1" onclick="openProject(1)">
                   View
                 </button>
-                <a class="btn" href="#" onclick="openProject(0);return false;"
-                  >Case study</a
-                >
               </div>
             </div>
           </article>
@@ -744,69 +817,25 @@
               </svg>
             </div>
             <div class="project-body">
-              <h4 style="margin: 0">Library Management API Tests</h4>
+              <h4 style="margin: 0">Online Voting System</h4>
               <p style="color: var(--muted); font-size: 13px; margin: 8px 0">
-                Built a Postman-based regression suite for internal API with
-                environment-driven tests and CI-friendly Newman reports.
+                A responsive web-based voting platform built with HTML, CSS, and
+                JavaScript. Features user authentication, voter registration,
+                and a professional interface. Includes modular components and is
+                designed for easy backend integration with PHP or Java Servlets.
+                Live demo available on GitHub Pages
               </p>
               <div style="display: flex; gap: 8px; flex-wrap: wrap">
-                <div class="tag">Postman</div>
-                <div class="tag">Newman</div>
-                <div class="tag">CI</div>
-              </div>
-              <div style="margin-top: 10px; display: flex; gap: 8px">
-                <button class="btn" data-idx="1" onclick="openProject(1)">
-                  View
-                </button>
-                <a class="btn" href="#" onclick="openProject(1);return false;"
-                  >Case study</a
-                >
-              </div>
-            </div>
-          </article>
-          <article class="project-card card fade-up inview">
-            <div class="project-thumb">
-              <svg
-                width="120"
-                height="60"
-                viewBox="0 0 120 60"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  width="120"
-                  height="60"
-                  rx="6"
-                  fill="rgba(255,255,255,0.02)"
-                ></rect>
-                <text
-                  x="50%"
-                  y="50%"
-                  dominant-baseline="middle"
-                  text-anchor="middle"
-                  fill="var(--muted)"
-                  font-size="11"
-                >
-                  Screenshot
-                </text>
-              </svg>
-            </div>
-            <div class="project-body">
-              <h4 style="margin: 0">Selenium Smoke Tests</h4>
-              <p style="color: var(--muted); font-size: 13px; margin: 8px 0">
-                Implemented Selenium WebDriver smoke tests for key UI paths and
-                reduced critical issue slips to production.
-              </p>
-              <div style="display: flex; gap: 8px; flex-wrap: wrap">
-                <div class="tag">Selenium</div>
+                <div class="tag">HTML</div>
+                <div class="tag">CSS</div>
+                <div class="tag">JS</div>
                 <div class="tag">Java</div>
+                <div class="tag">PHP</div>
               </div>
               <div style="margin-top: 10px; display: flex; gap: 8px">
-                <button class="btn" data-idx="2" onclick="openProject(2)">
+                <button class="btn view" data-idx="2" onclick="openProject(2)">
                   View
                 </button>
-                <a class="btn" href="#" onclick="openProject(2);return false;"
-                  >Case study</a
-                >
               </div>
             </div>
           </article>
@@ -820,39 +849,173 @@
           <div class="timeline-item fade-up inview">
             <div class="timeline-marker" aria-hidden=""></div>
             <div class="timeline-body">
-              <strong
-                >Senior QA / Automation Lead — Current Employer
-                (replace)</strong
-              >
+              <strong>Senior Test Engineer — Coforge</strong>
               <div
                 style="color: var(--muted); font-size: 13px; margin-top: 6px"
               >
-                2024 - Present
+                May,2025 - Present
               </div>
               <ul
                 style="margin: 8px 0 0; padding-left: 18px; color: var(--muted)"
               >
-                <li>Led automation for DAL and policy flows</li>
-                <li>Reduced regression time by 30%</li>
-                <li>L2/L3 support &amp; incident RCA</li>
+                <li>
+                  Working on testing the DAL(API+UI) layer in DuckCreek project
+                </li>
+                <li>Utilizing Katalon and Postman for automation</li>
               </ul>
             </div>
           </div>
           <div class="timeline-item fade-up inview">
             <div class="timeline-marker" aria-hidden=""></div>
             <div class="timeline-body">
-              <strong>QA Engineer — Previous Employer (replace)</strong>
+              <strong>Associate Consultant — Capgemini</strong>
               <div
                 style="color: var(--muted); font-size: 13px; margin-top: 6px"
               >
-                2022 - 2024
+                June,2021 - May,2025
               </div>
               <ul
                 style="margin: 8px 0 0; padding-left: 18px; color: var(--muted)"
               >
-                <li>API &amp; UI testing</li>
-                <li>Built regression suites</li>
-                <li>Worked closely with developers &amp; product</li>
+                <div class="section-title">
+                  Career Journey: From Trainee to Leadership
+                </div>
+                <div class="paragraph">
+                  <span class="bold"
+                    >4+ years of consistent career growth at Capgemini</span
+                  >, evolving from .NET Trainee to Associate Consultant leading
+                  L3 production QA teams. Specialized in Property &amp; Casualty
+                  insurance with Duck Creek Policy expertise, delivering
+                  measurable impact through technical excellence and strategic
+                  leadership.
+                </div>
+
+                <div class="subsection-title">
+                  🎯 Key Achievements &amp; Impact
+                </div>
+
+                <div class="paragraph">
+                  <span class="bold">Leadership Excellence:</span>
+                </div>
+                <ul class="list">
+                  <li class="list-item">
+                    <span class="bold">L3 Production QA Team Leadership:</span>
+                    Oversaw Duck Creek Policy QA for enterprise-level P&amp;C
+                    insurance systems
+                  </li>
+                  <li class="list-item">
+                    <span class="bold">75% Backlog Reduction:</span> Reduced
+                    critical issues from 200+ to 50+, improving overall
+                    efficiency
+                  </li>
+                  <li class="list-item">
+                    <span class="bold">Daily Incident Management:</span>
+                    Resolved 2–3 incidents per day, enhancing L2 team
+                    performance and knowledge sharing
+                  </li>
+                </ul>
+
+                <div class="paragraph">
+                  <span class="bold">Technical Delivery:</span>
+                </div>
+                <ul class="list">
+                  <li class="list-item">
+                    <span class="bold">25+ User Stories Delivered:</span> Direct
+                    client engagement and requirement refinement
+                  </li>
+                  <li class="list-item">
+                    <span class="bold">End-to-End Testing Expertise:</span>
+                    Complete Duck Creek Policy renewal transaction processes
+                  </li>
+                  <li class="list-item">
+                    <span class="bold">Full Testing Lifecycle:</span> Black Box,
+                    Functional, Regression, Smoke, and Sanity testing
+                  </li>
+                  <li class="list-item">
+                    <span class="bold">.NET Development Foundation:</span> C#,
+                    MVC, Entity Framework, Web API for scalable solutions
+                  </li>
+                </ul>
+
+                <div class="paragraph">
+                  <span class="bold">Professional Development:</span>
+                </div>
+                <ul class="list">
+                  <li class="list-item">
+                    <span class="bold"
+                      >Duck Creek Policy Bootcamp Certified:</span
+                    >
+                    Specialized training in insurance domain
+                  </li>
+                  <li class="list-item">
+                    <span class="bold">Cross-Functional Collaboration:</span>
+                    Direct stakeholder engagement and client-facing experience
+                  </li>
+                  <li class="list-item">
+                    <span class="bold">Process Optimization:</span> Streamlined
+                    incident resolution and team productivity
+                  </li>
+                </ul>
+
+                <div class="subsection-title">
+                  🚀 Career Progression Timeline
+                </div>
+
+                <div class="paragraph">
+                  <span class="bold">Associate Consultant</span>
+                  <span class="italic">(Oct 2023 – May 2025)</span>
+                </div>
+                <ul class="list">
+                  <li class="list-item">Led L3 Production QA Team</li>
+                  <li class="list-item">Achieved 75% backlog reduction</li>
+                  <li class="list-item">
+                    Managed enterprise P&amp;C insurance systems
+                  </li>
+                </ul>
+
+                <div class="paragraph">
+                  <span class="bold">Senior Software Engineer</span>
+                  <span class="italic">(Jun 2021 – Oct 2023)</span>
+                </div>
+                <ul class="list">
+                  <li class="list-item">
+                    Delivered 25+ user stories with client collaboration
+                  </li>
+                  <li class="list-item">Specialized in Duck Creek Policy</li>
+                  <li class="list-item">
+                    Performed requirement analysis and refinement
+                  </li>
+                </ul>
+
+                <div class="paragraph">
+                  <span class="bold">.NET Trainee</span>
+                  <span class="italic">(Feb 2021 – Jun 2021)</span>
+                </div>
+                <ul class="list">
+                  <li class="list-item">
+                    Built full-stack development foundation
+                  </li>
+                  <li class="list-item">Mastered Microsoft technology stack</li>
+                  <li class="list-item">
+                    Gained experience in enterprise application development
+                  </li>
+                </ul>
+
+                <div class="subsection-title">💼 Core Competencies</div>
+                <div class="paragraph">
+                  <span class="bold">Domain Expertise:</span> Property &amp;
+                  Casualty Insurance, Duck Creek Policy Systems, Enterprise QA
+                  Leadership<br />
+                  <span class="bold">Technical Skills:</span> Manual &amp;
+                  Automation Testing, .NET Development, API Testing, Defect
+                  Tracking, Test Design<br />
+                  <span class="bold">Leadership:</span> Team Management, Process
+                  Improvement, Cross-functional Collaboration, Incident
+                  Analysis<br />
+                  <span class="bold">Business Impact:</span> Quality
+                  Optimization, Backlog Reduction, Client Satisfaction,
+                  Production Stability
+                </div>
               </ul>
             </div>
           </div>
@@ -876,7 +1039,7 @@
               <textarea id="message" placeholder="Message" required></textarea>
               <div style="display: flex; gap: 8px; justify-content: flex-start">
                 <button type="submit" class="btn primary">Send Message</button>
-                <button type="button" class="btn" id="downloadResume">
+                <button type="button" class="btn view" id="downloadResume">
                   Download Resume
                 </button>
               </div>
@@ -899,14 +1062,11 @@
             >
               <a
                 class="btn"
-                href="https://www.linkedin.com/in/replace-linkedin"
+                href="https://www.linkedin.com/in/ankit-ved/"
                 target="_blank"
                 >LinkedIn</a
               >
-              <a
-                class="btn"
-                href="https://github.com/replace-github"
-                target="_blank"
+              <a class="btn" href="https://github.com/AnkitVS" target="_blank"
                 >GitHub</a
               >
               <a class="btn" href="mailto:dev.ankit.ved@gmail.com">Email</a>
@@ -928,7 +1088,7 @@
       </section>
 
       <footer>
-        © <span id="year"></span> Ankit Ved — Built with HTML, CSS & JS.
+        © 2023-<span id="year"></span> Ankit Ved — Built with HTML, CSS & JS.
       </footer>
     </div>
 
@@ -1110,6 +1270,21 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeModal();
       });
+
+      // opn projects
+      const projectLinks = [
+        "https://github.com/AnkitVS/Portfolio",
+        "https://github.com/AnkitVS/Election-Administration-System",
+        "https://github.com/AnkitVS/project3",
+      ];
+
+      function openProject(index) {
+        if (index >= 0 && index < projectLinks.length) {
+          window.open(projectLinks[index], "_blank");
+        } else {
+          alert("Invalid project index!");
+        }
+      }
     </script>
     <script>
       particlesJS("particles-js", {
