@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - '**'        # all other branches
+      
   workflow_dispatch:
 
 permissions:
@@ -38,13 +38,3 @@ jobs:
           publish_dir: ./
           publish_branch: gh-pages-master
           cname: ankitved.dev
-
-      # Deploy all other branches → .in
-      - name: Deploy other branches to .in
-        if: github.ref != 'refs/heads/master'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages-enhancements
-          cname: ankitved.in
