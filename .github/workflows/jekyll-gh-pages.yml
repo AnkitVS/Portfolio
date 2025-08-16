@@ -19,21 +19,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # Upload your static site artifact
-      - name: Upload static site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./   # root folder of your site
-
-      # Deploy master branch → .dev
       - name: Deploy master branch to .dev
         if: github.ref == 'refs/heads/master'
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: master
           cname: ankitved.dev
