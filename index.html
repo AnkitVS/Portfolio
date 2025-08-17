@@ -48,11 +48,11 @@
       }
 
       #particles-js {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         z-index: -1;
       }
 
@@ -66,9 +66,21 @@
       }
 
       .container {
+        background: #00d9f5;
+        position: relative;
+        z-index: 1;
         max-width: var(--max-width);
         margin: 0 auto;
         padding: 28px;
+        max-width: var(--max-width);
+        background: rgba(
+          15,
+          23,
+          36,
+          0.6
+        ); /* Semi-transparent dark background */
+        backdrop-filter: blur(1px); /* Optional: adds blur effect */
+        border-radius: 20px; /* Optional: rounded corners */
       }
 
       header {
@@ -578,6 +590,7 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   </head>
   <body>
+    <div id="particles-js"></div>
     <div class="container">
       <header>
         <div class="brand">
@@ -594,7 +607,7 @@
           <button class="btn primary" id="viewResume">View Resume</button>
         </nav>
       </header>
-      <div id="particles-js"></div>
+
       <!-- intro -->
       <section class="intro" id="intro">
         <div class="intro-left">
@@ -722,7 +735,7 @@
                   fill="var(--muted)"
                   font-size="11"
                 >
-                  Screenshot
+                  <img src="assets/portfolio_ss.png">
                 </text>
               </svg>
             </div>
@@ -765,7 +778,7 @@
                   fill="var(--muted)"
                   font-size="11"
                 >
-                  Screenshot
+                  EAS
                 </text>
               </svg>
             </div>
@@ -812,7 +825,7 @@
                   fill="var(--muted)"
                   font-size="11"
                 >
-                  Screenshot
+                  <img src="assets/ovs_ss.png">
                 </text>
               </svg>
             </div>
@@ -1274,7 +1287,7 @@
       const projectLinks = [
         "https://github.com/AnkitVS/Portfolio",
         "https://github.com/AnkitVS/Election-Administration-System",
-        "https://github.com/AnkitVS/project3",
+        "https://github.com/AnkitVS/Online-Voting-System",
       ];
 
       function openProject(index) {
